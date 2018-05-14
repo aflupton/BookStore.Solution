@@ -11,11 +11,11 @@ namespace BookStore.Models
     private int _id;
     private string _bookName;
     private string _author;
-    private int _isbn;
+    private string _isbn;
     private double _price;
     private string _image;
 
-    public Book (string bookName, string author, int isbn, double price, string image, int id = 0)
+    public Book (string bookName, string author, string isbn, double price, string image, int id = 0)
     {
       _id =id;
       _bookName = bookName;
@@ -45,11 +45,11 @@ namespace BookStore.Models
     {
       _author = newAuthor;
     }
-    public int GetIsbn()
+    public string GetIsbn()
     {
       return _isbn;
     }
-    public void SetIsbn(int newIsbn)
+    public void SetIsbn(string newIsbn)
     {
       _isbn = newIsbn;
     }
@@ -70,7 +70,7 @@ namespace BookStore.Models
       _image = newImage;
     }
 
-    //override bools for testing
+    //overrides for testing
     public override int GetHashCode()
     {
       return this.GetId().GetHashCode();
@@ -87,7 +87,7 @@ namespace BookStore.Models
         return this.GetId().Equals(newBook.GetId());
       }
     }
-    
+
     //create Book instance in database table 'books'
     public void Save()
     {
@@ -156,7 +156,7 @@ namespace BookStore.Models
       }
     }
 
-    //get all Book instances in Book class
+    //get all single Book instances in Book class
     public static List<Book> GetAll()
     {
       List<Book> allBooks = new List<Book> {};
@@ -171,7 +171,7 @@ namespace BookStore.Models
         int id = rdr.GetInt32(0);
         string bookName = rdr.GetString(1);
         string author = rdr.GetString(2);
-        int isbn = rdr.GetInt32(3);
+        string isbn = rdr.GetString(3);
         double price = rdr.GetDouble(4);
         string image = rdr.GetString(5);
         Book newBook = new Book(bookName, author, isbn, price, image, id);
@@ -235,7 +235,7 @@ namespace BookStore.Models
       int bookId = 0;
       string name = "";
       string author = "";
-      int isbn = 0;
+      string isbn = "";
       double price = 0;
       string image = "";
 
@@ -244,7 +244,7 @@ namespace BookStore.Models
         bookId = rdr.GetInt32(0);
         name = rdr.GetString(1);
         author = rdr.GetString(2);
-        isbn = rdr.GetInt32(3);
+        isbn = rdr.GetString(3);
         price = rdr.GetDouble(4);
         image = rdr.GetString(5);
       }
@@ -259,7 +259,7 @@ namespace BookStore.Models
     }
 
     //update single Book instance in table 'books'
-    public void UpdateBook(string bookName, string bookAuthor, int bookIsbn, double bookPrice, string bookImage)
+    public void UpdateBook(string bookName, string bookAuthor, string bookIsbn, double bookPrice, string bookImage)
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
@@ -332,8 +332,8 @@ namespace BookStore.Models
       }
     }
 
-    //delete entire Book class
-    public void DeleteAll()
+    //delete all Book instances
+    public static void DeleteAll()
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();

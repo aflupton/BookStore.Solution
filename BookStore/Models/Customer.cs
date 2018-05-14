@@ -86,7 +86,7 @@ namespace BookStore.Models
     {
         MySqlConnection conn = DB.Connection();
         conn.Open();
-        var cmd = conn.CreateCommand() as MySqlCommand;
+        MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
         if (newName == newAddress)
         {
           cmd.CommandText = @"UPDATE customers SET name = @NewName WHERE id = @searchId;";
@@ -132,21 +132,18 @@ namespace BookStore.Models
         searchId.Value = id;
         cmd.Parameters.Add(searchId);
 
-        var rdr = cmd.ExecuteReader() as MySqlDataReader;
+        MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
         int customerId = 0;
         string name = "";
         string address = "";
-        // We remove the line setting a itemBookId value here.
 
         while(rdr.Read())
         {
           customerId = rdr.GetInt32(0);
           name = rdr.GetString(1);
           address = rdr.GetString(2);
-          // We no longer read the itemBookId here, either.
         }
 
-        // Constructor below no longer includes a itemBookId parameter:
         Customer newCustomer = new Customer(name, address, id);
         conn.Close();
         if (conn != null)
@@ -160,7 +157,7 @@ namespace BookStore.Models
     {
        MySqlConnection conn = DB.Connection();
        conn.Open();
-       var cmd = conn.CreateCommand() as MySqlCommand;
+       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
        cmd.CommandText = @"DELETE FROM customers; DELETE FROM books_customers";
        cmd.ExecuteNonQuery();
        conn.Close();
@@ -191,7 +188,7 @@ namespace BookStore.Models
           int id = rdr.GetInt32(0);
           string bookName = rdr.GetString(1);
           string author = rdr.GetString(2);
-          int isbn = rdr.GetInt32(3);
+          string isbn = rdr.GetString(3);
           double price = rdr.GetDouble(4);
           string image = rdr.GetString(5);
 

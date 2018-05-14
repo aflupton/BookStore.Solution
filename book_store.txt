@@ -1,0 +1,392 @@
+https://images.isbndb.com/covers/22/89/9780439472289.jpg" 
+
+Full Title: Ruby the Copycat
+ISBN: 0439472288
+ISBN13: 9780439472289
+Publisher: Scholastic
+Publish Date: 2006-08-01
+Binding: Paperback
+https://images.isbndb.com/covers/86/28/9780134598628.jpg" 
+
+Full Title: Ruby on Rails Tutorial: Learn Web Development with Rails (4th Edition) (Addison-Wesley Professional Ruby Series)
+ISBN: 0134598628
+ISBN13: 9780134598628
+Publisher: Addison-Wesley Professional
+Publish Date: 2016-11-17
+Binding: Paperback
+https://images.isbndb.com/covers/61/78/9780596516178.jpg" 
+
+Full Title: The Ruby Programming Language: Everything You Need to Know
+ISBN: 0596516177
+ISBN13: 9780596516178
+Publisher: O&#039;Reilly Media
+Publish Date: 2008-02-04
+Binding: Paperback
+https://images.isbndb.com/covers/22/65/9780439472265.jpg" 
+
+Full Title: The Story Of Ruby Bridges: Special Anniversary Edition
+ISBN: 0439472261
+ISBN13: 9780439472265
+Publisher: Scholastic Paperbacks
+Publish Date: 2010-09-01
+Binding: Paperback
+https://images.isbndb.com/covers/77/04/9781521367704.jpg" 
+
+Full Title: Ruby For Beginners: Your Guide To Easily Learn Ruby Programming in 7 days
+ISBN: 1521367701
+ISBN13: 9781521367704
+Publisher: Independently published
+Publish Date: 2017-05-25
+Binding: Paperback
+https://images.isbndb.com/covers/13/34/9780321721334.jpg" 
+
+Full Title: Practical Object-Oriented Design in Ruby: An Agile Primer (Addison-Wesley Professional Ruby Series)
+ISBN: 0321721330
+ISBN13: 9780321721334
+Publisher: Addison-Wesley Professional
+Publish Date: 2012-09-15
+Binding: Paperback
+https://images.isbndb.com/covers/86/13/9780439738613.jpg" 
+
+Full Title: Ruby: The Red Fairy (Rainbow Magic: The Rainbow Fairies, No. 1)
+ISBN: 043973861X
+ISBN13: 9780439738613
+Publisher: Scholastic Inc.
+Publish Date: 2005-05-01
+Binding: Paperback
+https://images.isbndb.com/covers/26/51/9781449372651.jpg" 
+
+Full Title: Head First Ruby: A Brain-Friendly Guide
+ISBN: 1449372651
+ISBN13: 9781449372651
+Publisher: O&#039;Reilly Media
+Publish Date: 2015-11-30
+Binding: Paperback
+https://images.isbndb.com/covers/56/93/9781452145693.jpg" 
+
+Full Title: Ruby&#039;s Wish
+ISBN: 1452145695
+ISBN13: 9781452145693
+Publisher: Chronicle Books
+Publish Date: 2015-08-04
+Binding: Paperback
+https://images.isbndb.com/covers/95/97/9781781259597.jpg" 
+
+Full Title: Eat Up: Food, Appetite and Eating What You Want
+ISBN: 1781259593
+ISBN13: 9781781259597
+Publisher: Serpent&#039;s Tail
+Publish Date: 2018-02-01
+Binding: Hardcover
+https://images.isbndb.com/covers/01/57/9780060560157.jpg" 
+
+Full Title: Ruby Holler
+ISBN: 0060560150
+ISBN13: 9780060560157
+Publisher: HarperCollins
+Publish Date: 2012-04-24
+Binding: Paperback
+https://images.isbndb.com/covers/53/22/9781250065322.jpg" 
+
+Full Title: Hello Ruby: Journey Inside the Computer
+ISBN: 1250065321
+ISBN13: 9781250065322
+Publisher: Feiwel &amp; Friends
+Publish Date: 2017-10-03
+Binding: Hardcover
+https://images.isbndb.com/covers/41/06/9780321584106.jpg" 
+
+Full Title: Eloquent Ruby (Addison-Wesley Professional Ruby Series)
+ISBN: 0321584104
+ISBN13: 9780321584106
+Publisher: Addison-Wesley Professional
+Publish Date: 2011-02-21
+Binding: Paperback
+https://images.isbndb.com/covers/76/02/9780545017602.jpg" 
+
+Full Title: Brand New School, Brave New Ruby (Ruby and the Booker Boys #1)
+ISBN: 0545017602
+ISBN13: 9780545017602
+Publisher: Scholastic Paperbacks
+Publish Date: 2008-07-01
+Binding: Paperback
+https://images.isbndb.com/covers/60/17/9781491926017.jpg" 
+
+Full Title: Ruby Pocket Reference: Instant Help for Ruby Programmers
+ISBN: 1491926015
+ISBN13: 9781491926017
+Publisher: O&#039;Reilly Media
+Publish Date: 2015-08-28
+Binding: Paperback
+https://images.isbndb.com/covers/47/26/9780763654726.jpg" 
+
+Full Title: Ruby Redfort Blink and You Die
+ISBN: 0763654728
+ISBN13: 9780763654726
+Publisher: Candlewick
+Publish Date: 2018-05-08
+Binding: Hardcover
+https://images.isbndb.com/covers/23/19/9780545782319.jpg" 
+
+Full Title: Ruby Lee and Me
+ISBN: 0545782317
+ISBN13: 9780545782319
+Publisher: Scholastic Press
+Publish Date: 2018-01-30
+Binding: Paperback
+https://images.isbndb.com/covers/69/44/9780062306944.jpg" 
+
+Full Title: York: The Shadow Cipher
+ISBN: 0062306944
+ISBN13: 9780062306944
+Publisher: Walden Pond Press
+Publish Date: 2018-05-01
+Binding: Paperback
+https://images.isbndb.com/covers/63/64/9781934356364.jpg" 
+
+Full Title: Learn to Program, Second Edition (The Facets of Ruby Series)
+ISBN: 1934356360
+ISBN13: 9781934356364
+Publisher: Pragmatic Bookshelf
+Publish Date: 2009-04-07
+Binding: Paperback
+https://images.isbndb.com/covers/63/64/9781934356364.jpg" 
+
+Full Title: Learn to Program, Second Edition (The Facets of Ruby Series)
+ISBN: 1934356360
+ISBN13: 9781934356364
+Publisher: Pragmatic Bookshelf
+Publish Date: 2009-04-07
+Binding: Paperback
+https://images.isbndb.com/covers/63/35/9781595146335.jpg" 
+
+Full Title: The Ruby Circle: A Bloodlines Novel
+ISBN: 1595146334
+ISBN13: 9781595146335
+Publisher: Razorbill
+Publish Date: 2015-10-13
+Binding: Paperback
+https://images.isbndb.com/covers/85/53/9780545108553.jpg" 
+
+Full Title: Ruby Bridges Goes to School: My True Story (Scholastic Reader, Level 2)
+ISBN: 0545108551
+ISBN13: 9780545108553
+Publisher: Cartwheel Books
+Publish Date: 2009-12-01
+Binding: Paperback
+https://images.isbndb.com/covers/80/16/9781938248016.jpg" 
+
+Full Title: A Framework for Understanding Poverty; A Cognitive Approach
+ISBN: 1938248015
+ISBN13: 9781938248016
+Publisher: aha! Process, Inc.
+Publish Date: 2013-02-20
+Binding: Paperback
+https://images.isbndb.com/covers/69/44/9780062306944.jpg" 
+
+Full Title: York: The Shadow Cipher
+ISBN: 0062306944
+ISBN13: 9780062306944
+Publisher: Walden Pond Press
+Publish Date: 2018-05-01
+Binding: Paperback
+https://images.isbndb.com/covers/25/10/9781680502510.jpg" 
+
+Full Title: Agile Web Development with Rails 5.1
+ISBN: 1680502514
+ISBN13: 9781680502510
+Publisher: Pragmatic Bookshelf
+Publish Date: 2017-11-16
+Binding: Paperback
+https://images.isbndb.com/covers/76/77/9780134657677.jpg" 
+
+Full Title: The Rails 5 Way (4th Edition) (Addison-Wesley Professional Ruby Series)
+ISBN: 0134657675
+ISBN13: 9780134657677
+Publisher: Addison-Wesley Professional
+Publish Date: 2017-11-24
+Binding: Paperback
+https://images.isbndb.com/covers/52/73/9781593275273.jpg" 
+
+Full Title: Ruby Under a Microscope: An Illustrated Guide to Ruby Internals
+ISBN: 1593275277
+ISBN13: 9781593275273
+Publisher: No Starch Press
+Publish Date: 2013-11-22
+Binding: Paperback
+https://images.isbndb.com/covers/46/33/9780321714633.jpg" 
+
+Full Title: The Ruby Way: Solutions and Techniques in Ruby Programming (3rd Edition) (Addison-Wesley Professional Ruby Series)
+ISBN: 0321714636
+ISBN13: 9780321714633
+Publisher: Addison-Wesley Professional
+Publish Date: 2015-03-12
+Binding: Paperback
+https://images.isbndb.com/covers/38/94/9781416913894.jpg" 
+
+Full Title: Ruby Lu, Brave and True
+ISBN: 1416913890
+ISBN13: 9781416913894
+Publisher: Atheneum Books for Young Readers
+Publish Date: 2006-01-01
+Binding: Paperback
+https://images.isbndb.com/covers/22/44/9781501162244.jpg" 
+
+Full Title: Ruby (Landry)
+ISBN: 1501162241
+ISBN13: 9781501162244
+Publisher: Pocket Books
+Publish Date: 2017-06-27
+Binding: Mass Market Paperback
+https://images.isbndb.com/covers/64/78/9780134456478.jpg" 
+
+Full Title: Practical Object-Oriented Design: An Agile Primer Using Ruby (2nd Edition)
+ISBN: 0134456475
+ISBN13: 9780134456478
+Publisher: Addison-Wesley Professional
+Publish Date: 2018-08-06
+Binding: Paperback
+https://images.isbndb.com/covers/92/31/9780590189231.jpg" 
+
+Full Title: Through My Eyes
+ISBN: 0590189239
+ISBN13: 9780590189231
+Publisher: Scholastic Press
+Publish Date: 1999-09-01
+Binding: Hardcover
+https://images.isbndb.com/covers/23/77/9780763692377.jpg" 
+
+Full Title: Ruby in the Ruins
+ISBN: 0763692379
+ISBN13: 9780763692377
+Publisher: Candlewick
+Publish Date: 2018-05-08
+Binding: Hardcover
+https://images.isbndb.com/covers/74/92/9780062467492.jpg" 
+
+Full Title: The Ruined House: A Novel
+ISBN: 0062467492
+ISBN13: 9780062467492
+Publisher: Harper
+Publish Date: 2017-11-07
+Binding: Hardcover
+https://images.isbndb.com/covers/47/86/9780152054786.jpg" 
+
+Full Title: Love, Ruby Lavender
+ISBN: 0152054782
+ISBN13: 9780152054786
+Publisher: HMH Books for Young Readers
+Publish Date: 2005-03-01
+Binding: Paperback
+https://images.isbndb.com/covers/45/24/9780763694524.jpg" 
+
+Full Title: Ruby Redfort Feel the Fear
+ISBN: 0763694525
+ISBN13: 9780763694524
+Publisher: Candlewick
+Publish Date: 2018-05-08
+Binding: Paperback
+https://images.isbndb.com/covers/07/42/9781480860742.jpg" 
+
+Full Title: Piper and Ruby: The Courage Within
+ISBN: 1480860743
+ISBN13: 9781480860742
+Publisher: Archway Publishing
+Publish Date: 2018-04-24
+Binding: Paperback
+https://images.isbndb.com/covers/50/44/9781442485044.jpg" 
+
+Full Title: Ruby on the Outside
+ISBN: 1442485043
+ISBN13: 9781442485044
+Publisher: Simon &amp; Schuster Books for Young Readers
+Publish Date: 2016-06-14
+Binding: Paperback
+https://images.isbndb.com/covers/91/55/9780439579155.jpg" 
+
+Full Title: Ruby In Her Own Time
+ISBN: 0439579155
+ISBN13: 9780439579155
+Publisher: Scholastic Press
+Publish Date: 2004-02-01
+Binding: Hardcover
+https://images.isbndb.com/covers/40/89/9781424554089.jpg" 
+
+Full Title: Ruby the Foster Dog
+ISBN: 142455408X
+ISBN13: 9781424554089
+Publisher: Broadstreet Publishing Group, LLC
+Publish Date: 2017-11-15
+Binding: Hardcover
+https://images.isbndb.com/covers/53/21/9781527205321.jpg" 
+
+Full Title: Memories Unwound
+ISBN: 1527205320
+ISBN13: 9781527205321
+Publisher: Ajmeet Dhal
+Publish Date: 2017-03-24
+Binding: Paperback
+https://images.isbndb.com/covers/73/86/9781421597386.jpg" 
+
+Full Title: Pokémon Omega Ruby &amp; Alpha Sapphire, Vol. 6 (Pokemon)
+ISBN: 1421597381
+ISBN13: 9781421597386
+Publisher: VIZ Media - Children&#039;s
+Publish Date: 2018-03-06
+Binding: Paperback
+https://images.isbndb.com/covers/15/13/9780312551513.jpg" 
+
+Full Title: Ruby Red (The Ruby Red Trilogy)
+ISBN: 0312551517
+ISBN13: 9780312551513
+Publisher: Square Fish
+Publish Date: 2012-05-22
+Binding: Paperback
+https://images.isbndb.com/covers/50/58/9780692095058.jpg" 
+
+Full Title: Wasting time illusions Versus reality
+ISBN: 0692095055
+ISBN13: 9780692095058
+Publisher: Ruby Larry
+Publish Date: 2018-04-16
+Binding: Paperback
+https://images.isbndb.com/covers/33/57/9781934583357.jpg" 
+
+Full Title: Bridges Out of Poverty: Strategies for Professional and Communities
+ISBN: 1934583359
+ISBN13: 9781934583357
+Publisher: aha! Process, Inc.
+Publish Date: 2001
+Binding: Paperback
+https://images.isbndb.com/covers/79/42/9780060007942.jpg" 
+
+Full Title: Ruby Ridge: The Truth and Tragedy of the Randy Weaver Family
+ISBN: 006000794X
+ISBN13: 9780060007942
+Publisher: Harper Perennial
+Publish Date: 2002-02-19
+Binding: Paperback
+https://images.isbndb.com/covers/33/80/9781250133380.jpg" 
+
+Full Title: Ruby&#039;s Chinese New Year
+ISBN: 1250133386
+ISBN13: 9781250133380
+Publisher: Henry Holt and Co. (BYR)
+Publish Date: 2017-12-26
+Binding: Hardcover
+https://images.isbndb.com/covers/27/50/9781533662750.jpg" 
+
+Full Title: Far Above Rubies: A Practical Guide through Proverbs 31 for Biblical Womanhood
+ISBN: 1533662754
+ISBN13: 9781533662750
+Publisher: CreateSpace Independent Publishing Platform
+Publish Date: 2016-06-20
+Binding: Paperback
+https://images.isbndb.com/covers/19/41/9780142401941.jpg" 
+
+Full Title: Ruby&#039;s Beauty Shop (Max and Ruby)
+ISBN: 0142401943
+ISBN13: 9780142401941
+Publisher: Puffin Books
+Publish Date: 2004-11-18
+Binding: Paperback

@@ -13,15 +13,17 @@ namespace BookStore.Models
     private string _author;
     private string _isbn;
     private double _price;
+    private string _publisher;
     private string _image;
 
-    public Book (string bookName, string author, string isbn, double price, string image, int id = 0)
+    public Book (string bookName, string author, string isbn, double price, string publisher, string image, int id = 0)
     {
       _id =id;
       _bookName = bookName;
       _author = author;
       _isbn = isbn;
       _price = price;
+      _publisher = publisher;
       _image = image;
     }
 
@@ -61,6 +63,14 @@ namespace BookStore.Models
     {
       _price = newPrice;
     }
+    public string GetPublisher()
+    {
+      return _publisher;
+    }
+    public void SetPublisher(string newPublisher)
+    {
+      _publisher = publisher;
+    }
     public string GetImage()
     {
       return _image;
@@ -94,7 +104,7 @@ namespace BookStore.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO books (bookName, author, isbn, price, image) VALUES (@BookName, @Author, @Isbn, @Price, @Image);";
+      cmd.CommandText = @"INSERT INTO books (bookName, author, isbn, price, publisher, image) VALUES (@BookName, @Author, @Isbn, @Price, @Publisher, @Image);";
 
       MySqlParameter bookName = new MySqlParameter();
       bookName.ParameterName = "@BookName";
@@ -115,6 +125,11 @@ namespace BookStore.Models
       price.ParameterName = "@Price";
       price.Value = this._price;
       cmd.Parameters.Add(price);
+
+      MySqlParameter publisher = new MySqlParameter();
+      publisher.ParameterName = "@Publisher";
+      publisher.Value = this._publisher;
+      cmd.Parameters.Add(publisher);
 
       MySqlParameter image = new MySqlParameter();
       image.ParameterName = "@Image";
@@ -169,12 +184,13 @@ namespace BookStore.Models
       while (rdr.Read())
       {
         int id = rdr.GetInt32(0);
-        string bookName = rdr.GetString(1);
-        string author = rdr.GetString(2);
+        string bookName = rdr.GetString(2);
+        string author = rdr.GetString(4);
         string isbn = rdr.GetString(3);
-        double price = rdr.GetDouble(4);
-        string image = rdr.GetString(5);
-        Book newBook = new Book(bookName, author, isbn, price, image, id);
+        double price = rdr.GetDouble(5);
+        string publisher = rdr.GetString(5)
+        string image = rdr.GetString(1);
+        Book newBook = new Book(bookName, author, isbn, price, publisher, image, id);
         allBooks.Add(newBook);
       }
       conn.Close();
@@ -237,6 +253,7 @@ namespace BookStore.Models
       string author = "";
       string isbn = "";
       double price = 0;
+      string publisher = "";
       string image = "";
 
       while(rdr.Read())
@@ -246,10 +263,11 @@ namespace BookStore.Models
         author = rdr.GetString(2);
         isbn = rdr.GetString(3);
         price = rdr.GetDouble(4);
-        image = rdr.GetString(5);
+        publisher = rdr.GetString(5)
+        image = rdr.GetString(1);
       }
 
-      Book foundBook = new Book (name, author, isbn, price, image, id);
+      Book foundBook = new Book (name, author, isbn, price, publisher, image, id);
       conn.Close();
       if(conn != null)
       {
@@ -259,12 +277,12 @@ namespace BookStore.Models
     }
 
     //update single Book instance in table 'books'
-    public void UpdateBook(string bookName, string bookAuthor, string bookIsbn, double bookPrice, string bookImage)
+    public void UpdateBook(string bookName, string bookAuthor, string bookIsbn, double bookPrice, string bookPublisher, string bookImage)
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"UPDATE books SET bookName = @BookName, author = @Author, isbn = @Isbn, price = @Price, image = @Image;";
+      cmd.CommandText = @"UPDATE books SET bookName = @BookName, author = @Author, isbn = @Isbn, price = @Price, publisher = @Publisher, image = @Image;";
 
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
@@ -291,6 +309,11 @@ namespace BookStore.Models
       price.Value = _id;
       cmd.Parameters.Add(price);
 
+      MySqlParameter publisher = new MySqlParameter();
+      publisher.ParameterName = "@Publisher";
+      publisher.Value = _id;
+      cmd.Parameters.Add(publisher);
+
       MySqlParameter image = new MySqlParameter();
       image.ParameterName = "@Image";
       image.Value = bookImage;
@@ -301,6 +324,7 @@ namespace BookStore.Models
       _author = bookAuthor;
       _isbn = bookIsbn;
       _price = bookPrice;
+      _publisher = bookPublisher;
       _image = bookImage;
 
       if(conn != null)

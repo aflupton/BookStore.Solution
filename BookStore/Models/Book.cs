@@ -70,7 +70,25 @@ namespace BookStore.Models
       _image = newImage;
     }
 
-    //create object in database table 'books'
+    //override bools for testing
+    public override int GetHashCode()
+    {
+      return this.GetId().GetHashCode();
+    }
+    public override bool Equals(System.Object otherBook)
+    {
+      if (!(otherBook is Book))
+      {
+        return false;
+      }
+      else
+      {
+        Book newBook = (Book) otherBook;
+        return this.GetId().Equals(newBook.GetId());
+      }
+    }
+    
+    //create Book instance in database table 'books'
     public void Save()
     {
       MySqlConnection conn = DB.Connection();
@@ -112,7 +130,7 @@ namespace BookStore.Models
       }
     }
 
-    //create join table instance
+    //create join table instance, linking customer(s) to a Book instance
     public void AddCustomerToBook(Customer newCustomer)
     {
       MySqlConnection conn = DB.Connection();
@@ -138,7 +156,7 @@ namespace BookStore.Models
       }
     }
 
-    //get all book instances in class
+    //get all Book instances in Book class
     public static List<Book> GetAll()
     {
       List<Book> allBooks = new List<Book> {};
@@ -167,7 +185,7 @@ namespace BookStore.Models
       return allBooks;
     }
 
-    //get all customer instances from join table
+    //get all Book-linked customer instances from join table
     public List<Customer> GetCustomers()
     {
       MySqlConnection conn = DB.Connection();
@@ -200,13 +218,13 @@ namespace BookStore.Models
       return Customers;
     }
 
-    //find instance in table 'books'
+    //find single Book instance in table 'books'
     public static Book Find(int id)
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM books WHERE id = (@searchId);";
+      cmd.CommandText = @"SELECT * FROM books WHERE id = @searchId;";
 
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
@@ -231,16 +249,16 @@ namespace BookStore.Models
         image = rdr.GetString(5);
       }
 
-      Book myBook = new Book (name, author, isbn, price, image, id);
+      Book foundBook = new Book (name, author, isbn, price, image, id);
       conn.Close();
       if(conn != null)
       {
         conn.Dispose();
       }
-      return myBook;
+      return foundBook;
     }
 
-    //update instance in table 'books'
+    //update single Book instance in table 'books'
     public void UpdateBook(string bookName, string bookAuthor, int bookIsbn, double bookPrice, string bookImage)
     {
       MySqlConnection conn = DB.Connection();
@@ -292,7 +310,7 @@ namespace BookStore.Models
 
     }
 
-    //delete instance in table 'books'
+    //delete single Book instance in table 'books'
     public void DeleteBook()
     {
       MySqlConnection conn = DB.Connection();
@@ -302,7 +320,7 @@ namespace BookStore.Models
       DELETE FROM books_customers WHERE book_id = @BookId;";
 
       MySqlParameter id = new MySqlParameter();
-      id.ParameterName = "@BandId";
+      id.ParameterName = "@BookId";
       id.Value = this.GetId();
       cmd.Parameters.Add(id);
 
@@ -314,7 +332,7 @@ namespace BookStore.Models
       }
     }
 
-    //delete entire class
+    //delete entire Book class
     public void DeleteAll()
     {
       MySqlConnection conn = DB.Connection();

@@ -111,6 +111,7 @@ namespace BookStore.Models
         conn.Dispose();
       }
     }
+
     //create join table instance
     public void AddCustomerToBook(Customer newCustomer)
     {
@@ -137,7 +138,7 @@ namespace BookStore.Models
       }
     }
 
-    //getall book instances in class
+    //get all book instances in class
     public static List<Book> GetAll()
     {
       List<Book> allBooks = new List<Book> {};
@@ -164,6 +165,40 @@ namespace BookStore.Models
         conn.Dispose();
       }
     }
+
+    //get all customer instances from join table
+    public List<Customer> GetCustomers()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT customers.* FROM books
+      JOIN books_customers ON (books.id = books_customers.book_id)
+      JOIN customers ON (books_customer.customer_id = customer_id) WHERE books.id = @BookId;";
+
+      MySqlParameter BookId = new MySqlParameter();
+      BookId.ParameterName = "@BookId";
+      BookId.Value = _id;
+      cmd.Parameters.Add(BookId);
+
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      List<Customer> Customers = new List<Customer> {};
+      while(rdr.Read())
+      {
+        int id = rdr.GetInt32(0);
+        string name = rdr.GetString(1);
+        string address = rdr.GetString(2);
+        Customer newCustomer = new Customer(name, address, id);
+        Customers.Add(newCustomer);
+      }
+      conn.Close();
+      if(conn != null)
+      {
+        conn.Dispose();
+      }
+      return Customers;
+    }
+
     //find instance in table 'books'
     public static Book Find(int id)
     {
@@ -203,9 +238,80 @@ namespace BookStore.Models
       }
       return myBook;
     }
+
     //update instance in table 'books'
+    public void UpdateBook(string bookName, string bookAuthor, int bookIsbn, double bookPrice, string bookImage)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"UPDATE books SET bookName = @BookName, author = @Author, isbn = @Isbn, price = @Price, image = @Image;";
+
+      MySqlParameter searchId = new MySqlParameter();
+      searchId.ParameterName = "@searchId";
+      searchId.Value = _id;
+      cmd.Parameters.Add(searchId);
+
+      MySqlParameter name = new MySqlParameter();
+      name.ParameterName = "@BookName";
+      name.Value = bookName;
+      cmd.Parameters.Add(name);
+
+      MySqlParameter author = new MySqlParameter();
+      author.ParameterName = "@Author";
+      author.Value = bookAuthor;
+      cmd.Parameters.Add(author);
+
+      MySqlParameter isbn = new MySqlParameter();
+      isbn.ParameterName = "@Isbn";
+      isbn.Value = bookIsbn;
+      cmd.Parameters.Add(isbn);
+
+      MySqlParameter price = new MySqlParameter();
+      price.ParameterName = "@Price";
+      price.Value = _id;
+      cmd.Parameters.Add(price);
+
+      MySqlParameter image = new MySqlParameter();
+      image.ParameterName = "@Image";
+      image.Value = bookImage;
+      cmd.Parameters.Add(image);
+
+      cmd.ExecuteNonQuery();
+      _bookName = bookName;
+      _author = bookAuthor;
+      _isbn = bookIsbn;
+      _price = bookPrice;
+      _image = bookImage;
+
+      if(conn != null)
+      {
+        conn.Dispose();
+      }
+
+    }
 
     //delete instance in table 'books'
+    public void DeleteBook()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM books WHERE book_id = @BookId
+      DELETE FROM books_customers WHERE book_id = @BookId;";
+
+      MySqlParameter id = new MySqlParameter();
+      id.ParameterName = "@BandId";
+      id.Value = this.GetId();
+      cmd.Parameters.Add(id);
+
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if(conn != null)
+      {
+        conn.Dispose();
+      }
+    }
 
     //delete entire class
     public void DeleteAll()

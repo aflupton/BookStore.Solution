@@ -17,5 +17,7 @@ namespace BookStore.Models
       _id = id;
       _total = total;
     }
+
+    
   }
 }

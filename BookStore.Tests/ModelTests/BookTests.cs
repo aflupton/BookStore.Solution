@@ -22,8 +22,8 @@ namespace BookStore.Tests
     public void Saves_TwoBooks_AsSame()
     {
       //Arrange
-      Book firstBook = new Book ("The Enormous Room", "e.e. cummings", "3596215002", 9.99, "img");
-      Book secondBook = new Book ("The Enormous Room", "e.e. cummings", "3596215002", 9.99, "jpg");
+      Book firstBook = new Book ("The Enormous Room", "e.e. cummings", "3596215002", 9.99, "Penguin", "img");
+      Book secondBook = new Book ("The Enormous Room", "e.e. cummings", "3596215002", 9.99, "Penguin", "jpg");
       //Act
       firstBook.Save();
       secondBook.Save();
@@ -35,7 +35,7 @@ namespace BookStore.Tests
     public void Save_InstanceToDatabase_BooksTable()
     {
       //Arrange
-      Book testBook = new Book ("Moby Dick", "Herman Melville", "2342342322", 12.99, "img");
+      Book testBook = new Book ("Moby Dick", "Herman Melville", "2342342322", 12.99, "Penguin", "img");
       testBook.Save();
       //Act
       List<Book> result = Book.GetAll();
@@ -48,7 +48,7 @@ namespace BookStore.Tests
     public void AddCustomer_ToBookObject()
     {
       //Arrange
-      Book testBook = new Book("The Kindly Ones", "Jonathan Littell", "234093922", 25, "img");
+      Book testBook = new Book("The Kindly Ones", "Jonathan Littell", "HarperCollins" "234093922", 25, "img");
       testBook.Save();
 
       Customer testCustomer = new Customer ("Austin", "600 1st Ave, Seattle, Wa");
@@ -66,7 +66,7 @@ namespace BookStore.Tests
     public void Find_AllBookObjects_InDatabase()
     {
       //Arrange
-      Book testBook = new Book ("Exit West", "Mohsin Hamid", "2349234332", 15.99, "img");
+      Book testBook = new Book ("Exit West", "Mohsin Hamid", "2349234332", 15.99, "Riverhead Books", "img");
       testBook.Save();
       //Act
       Book foundBook = Book.Find(testBook.GetId());
@@ -78,7 +78,7 @@ namespace BookStore.Tests
     public void Update_BookObject_BooksTable()
     {
       //Arrange
-      Book testBook = new Book ("Imagined Communities", "Benedict Anderson", "2342349430", 21, "img");
+      Book testBook = new Book ("Imagined Communities", "Benedict Anderson", "2342349430", 21, "Verso", "img");
       testBook.Save();
       string updatedName = "A Life Beyond Boundaries";
       string updatedAuthor = "Benedict Anderson";
@@ -96,7 +96,7 @@ namespace BookStore.Tests
     public void Delete_SingleBookObject_FromDatabase()
     {
       //Arrange
-      Book testBook = new Book ("Hhhh", "Laurent Binet", "9781452650", 20.95, "img");
+      Book testBook = new Book ("Hhhh", "Laurent Binet", "9781452650", 20.95, "Picador", "img");
       testBook.Save();
       //Act
       Console.WriteLine("Name: " + testBook.GetName() + "Author: " + testBook.GetAuthor());

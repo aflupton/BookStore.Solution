@@ -5,19 +5,17 @@ using MySql.Data.MySqlClient;
 
 namespace BookStore.Models
 {
-  public class Customer
+  public class Checkout
   {
     //private variables
     private int _id;
-    private string _name;
-    private string _address;
+    private int _total;
 
     //constructor
-    public Customer (string name, string address, int = 0)
+    public Checkout (int total, int id = 0)
     {
       _id = id;
-      _name = name;
-      _address = address;
+      _total = total;
     }
   }
 }

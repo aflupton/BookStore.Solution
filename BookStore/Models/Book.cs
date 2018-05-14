@@ -12,6 +12,17 @@ namespace BookStore.Models
     private string _bookName;
     private string _author;
     private int _isbn;
+    private double _price;
     private string _image;
+
+    public book (string bookName, string author, int isbn, double price, string image, int = 0)
+    {
+      _id =id;
+      _bookName = bookName;
+      _author = author;
+      _isbn = isbn;
+      _price = price;
+      _image = image;
+    }
   }
 }

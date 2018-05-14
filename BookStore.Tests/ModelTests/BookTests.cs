@@ -21,8 +21,8 @@ namespace BookStore.Tests
     public void Saves_TwoBooks_AsSame()
     {
       //Arrange
-      Book firstBook = new Book ("The Enormous Room", "e.e. cummings", "3596215002", 9.99, "img", 0);
-      Book secondBook = new Book ("The Enormous Room", "e.e. cummings", "3596215002", 9.99, "jpg", 0);
+      Book firstBook = new Book ("The Enormous Room", "e.e. cummings", "3596215002", 9.99, "img");
+      Book secondBook = new Book ("The Enormous Room", "e.e. cummings", "3596215002", 9.99, "jpg");
       //Act
       firstBook.Save();
       secondBook.Save();
@@ -45,11 +45,18 @@ namespace BookStore.Tests
     public void AddCustomer_ToBookObject()
     {
       //Arrange
+      Book testBook = new Book("The Kindly Ones", "Jonathan Littell", "234093922", 25, "img");
+      testBook.Save();
 
+      Customer testCustomer = new Customer ("Austin", "600 1st Ave, Seattle, Wa");
+      testCustomer.Save();
       //Act
-
+      testBook.AddCustomerToBook(testCustomer);
+      List<Customer> result = testBook.GetCustomers();
+      int resultOne = result[0].GetId();
+      int resultTwo = testCustomer.GetId();
       //Assert
-
+      Assert.AreEqual(resultOne, resultTwo);
     }
     [TestMethod]
     public void GetAll_BookObjects_FromDatabase()
@@ -71,6 +78,23 @@ namespace BookStore.Tests
       Book foundBook = Book.Find(testBook.GetId());
       //Assert
       Assert.AreEqual(testBook, foundBook);
+    }
+    [TestMethod]
+    public void Update_BookObject_BooksTable()
+    {
+      //Arrange
+      Book testBook = new Book ("Imagined Communities", "Benedict Anderson", "2342349430", 21, "img");
+      testBook.Save();
+      string updatedName = "A Life Beyond Boundaries";
+      string updatedAuthor = "Benedict Anderson";
+      string updatedIsbn = "3459854822";
+      double updatedPrice = 25;
+      string updatedImage = "image";
+      //Act
+      testBook.UpdateBook(updatedName, updatedAuthor, updatedIsbn, updatedPrice, updatedImage);
+      string result = Book.Find(testBook.GetId()).GetName();
+      //Assert
+      Assert.AreEqual(updatedName, result);
     }
     [TestMethod]
     public void Delete_SingleBookObject_FromDatabase()

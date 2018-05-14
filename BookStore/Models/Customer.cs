@@ -13,7 +13,7 @@ namespace BookStore.Models
     private string _address;
 
     //constructor
-    public Customer (string name, string address, int = 0)
+    public Customer (string name, string address, int id = 0)
     {
       _id = id;
       _name = name;
@@ -27,11 +27,18 @@ namespace BookStore.Models
     {
       return _name;
     }
+    public void SetName(string newName)
+    {
+      _name = newName;
+    }
     public string GetAddress()
     {
       return _address;
     }
-
+    public void SetAddress(string newAddress)
+    {
+      _address = newAddress;
+    }
     public void Save()
     {
       MySqlConnection conn = DB.Connection();
@@ -64,7 +71,8 @@ namespace BookStore.Models
       {
         int id = rdr.GetInt32(0);
         string name = rdr.GetString(1);
-        Customer newCustomer = new Customer(name, idd);
+        string address = rdr.GetString(2);
+        Customer newCustomer = new Customer(name, address, id);
         allCustomers.Add(newCustomer);
       }
       conn.Close();
@@ -74,31 +82,38 @@ namespace BookStore.Models
       }
       return allCustomers;
     }
-    public void Update(string newData, string parameter)
+    public void Update(string newName, string newAddress)
     {
         MySqlConnection conn = DB.Connection();
         conn.Open();
         var cmd = conn.CreateCommand() as MySqlCommand;
-        if (parameter == address)
+        if (newName == newAddress)
         {
-          cmd.CommandText = @"UPDATE customers SET address = @newData WHERE id = @searchId;";
+          cmd.CommandText = @"UPDATE customers SET name = @NewName WHERE id = @searchId;";
         }
         else
         {
-        cmd.CommandText = @"UPDATE customers SET name = @newData WHERE id = @searchId;";
+        cmd.CommandText = @"UPDATE customers SET address = @NewAddress WHERE id = @searchId;";
         }
         MySqlParameter searchId = new MySqlParameter();
         searchId.ParameterName = "@searchId";
         searchId.Value = _id;
         cmd.Parameters.Add(searchId);
 
-        MySqlParameter description = new MySqlParameter();
-        description.ParameterName = "@newData";
-        description.Value = newDescription;
-        cmd.Parameters.Add(description);
+        MySqlParameter name = new MySqlParameter();
+        name.ParameterName = "@NewName";
+        name.Value = newName;
+        cmd.Parameters.Add(name);
+
+        MySqlParameter address = new MySqlParameter();
+        address.ParameterName = "@NewAddress";
+        address.Value = newAddress;
+        cmd.Parameters.Add(address);
 
         cmd.ExecuteNonQuery();
-        _description = newDescription;
+        _name = newName;
+        _address = newAddress;
+
         conn.Close();
         if (conn != null)
         {
@@ -118,19 +133,21 @@ namespace BookStore.Models
         cmd.Parameters.Add(searchId);
 
         var rdr = cmd.ExecuteReader() as MySqlDataReader;
-        int id = 0;
+        int customerId = 0;
         string name = "";
+        string address = "";
         // We remove the line setting a itemBookId value here.
 
         while(rdr.Read())
         {
-          id = rdr.GetInt32(0);
+          customerId = rdr.GetInt32(0);
           name = rdr.GetString(1);
+          address = rdr.GetString(2);
           // We no longer read the itemBookId here, either.
         }
 
         // Constructor below no longer includes a itemBookId parameter:
-        Customer newCustomer = new Customer(name, id);
+        Customer newCustomer = new Customer(name, address, id);
         conn.Close();
         if (conn != null)
         {
@@ -144,7 +161,7 @@ namespace BookStore.Models
        MySqlConnection conn = DB.Connection();
        conn.Open();
        var cmd = conn.CreateCommand() as MySqlCommand;
-       cmd.CommandText = @"DELETE FROM customers; DELETE FROM customer_books";
+       cmd.CommandText = @"DELETE FROM customers; DELETE FROM books_customers";
        cmd.ExecuteNonQuery();
        conn.Close();
        if (conn != null)
@@ -152,14 +169,14 @@ namespace BookStore.Models
            conn.Dispose();
        }
     }
-    public List<Customer> GetCustomers()
+    public List<Book> GetBooks()
     {
         MySqlConnection conn = DB.Connection();
         conn.Open();
         MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT  books * FROM customers
-            JOIN customers_books ON (customers.id = customers_books.customer_id)
-            JOIN books ON (customers_books.book_id = books.id)
+        cmd.CommandText = @"SELECT books.* FROM customers
+            JOIN books_customers ON (customers.id = books_customers.customer_id)
+            JOIN books ON (books_customers.book_id = books.id)
             WHERE customers.id = @CustomerId;";
 
         MySqlParameter categoryIdParameter = new MySqlParameter();
@@ -168,26 +185,25 @@ namespace BookStore.Models
         cmd.Parameters.Add(categoryIdParameter);
 
         MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-        List<Book> books = new List<Book>{};
-
+        List<Book> Books = new List<Book> {};
         while(rdr.Read())
         {
           int id = rdr.GetInt32(0);
           string bookName = rdr.GetString(1);
-          string author =rdr.GetString(2);
-          int isbn =rdr.GetInt32(3);
+          string author = rdr.GetString(2);
+          int isbn = rdr.GetInt32(3);
           double price = rdr.GetDouble(4);
-          string image = rdr.GetString(5);      
+          string image = rdr.GetString(5);
 
           Book newBook = new Book (bookName, author, isbn, price, image, id);
-          books.Add(newBook);
+          Books.Add(newBook);
         }
         conn.Close();
         if (conn != null)
         {
             conn.Dispose();
         }
-        return customers;
+        return Books;
     }
 
   }

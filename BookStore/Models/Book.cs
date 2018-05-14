@@ -15,7 +15,7 @@ namespace BookStore.Models
     private double _price;
     private string _image;
 
-    public book (string bookName, string author, int isbn, double price, string image, int = 0)
+    public Book (string bookName, string author, int isbn, double price, string image, int id = 0)
     {
       _id =id;
       _bookName = bookName;
@@ -25,47 +25,47 @@ namespace BookStore.Models
       _image = image;
     }
 
-    public void GetId()
+    public int GetId()
     {
       return _id;
     }
-    public void GetName()
+    public string GetName()
     {
       return _bookName;
     }
-    public string SetName(string newBookName)
+    public void SetName(string newBookName)
     {
       _bookName = newBookName;
     }
-    public void GetAuthor()
+    public string GetAuthor()
     {
       return _author;
     }
-    public string SetAuthor(string newAuthor)
+    public void SetAuthor(string newAuthor)
     {
       _author = newAuthor;
     }
-    public void GetIsbn()
+    public int GetIsbn()
     {
       return _isbn;
     }
-    public int SetIsbn(int newIsbn)
+    public void SetIsbn(int newIsbn)
     {
       _isbn = newIsbn;
     }
-    public void GetPrice()
+    public double GetPrice()
     {
       return _price;
     }
-    public double SetPrice(double newPrice)
+    public void SetPrice(double newPrice)
     {
       _price = newPrice;
     }
-    public void GetImage()
+    public string GetImage()
     {
       return _image;
     }
-    public string SetImage(string newImage)
+    public void SetImage(string newImage)
     {
       _image = newImage;
     }
@@ -164,6 +164,7 @@ namespace BookStore.Models
       {
         conn.Dispose();
       }
+      return allBooks;
     }
 
     //get all customer instances from join table
@@ -212,8 +213,8 @@ namespace BookStore.Models
       searchId.Value = id;
       cmd.Parameters.Add(searchId);
 
-      MySqlDataReader rdr = cmd.ExecuteReader as MySqlDataReader;
-      int id = 0;
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      int bookId = 0;
       string name = "";
       string author = "";
       int isbn = 0;
@@ -222,7 +223,7 @@ namespace BookStore.Models
 
       while(rdr.Read())
       {
-        id = rdr.GetInt32(0);
+        bookId = rdr.GetInt32(0);
         name = rdr.GetString(1);
         author = rdr.GetString(2);
         isbn = rdr.GetInt32(3);
@@ -230,7 +231,7 @@ namespace BookStore.Models
         image = rdr.GetString(5);
       }
 
-      Book myBook = new Book (id, name, author, isbn, price, image);
+      Book myBook = new Book (name, author, isbn, price, image, id);
       conn.Close();
       if(conn != null)
       {

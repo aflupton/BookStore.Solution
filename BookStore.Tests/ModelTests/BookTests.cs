@@ -17,6 +17,7 @@ namespace BookStore.Tests
     {
       Book.DeleteAll();
     }
+    //test whether two identical books are recognized as identical instances
     [TestMethod]
     public void Saves_TwoBooks_AsSame()
     {
@@ -29,6 +30,7 @@ namespace BookStore.Tests
       //Assert
       Assert.AreEqual(firstBook, secondBook);
     }
+    //tests whether Save method works on the Book class
     [TestMethod]
     public void Save_InstanceToDatabase_BooksTable()
     {
@@ -41,6 +43,7 @@ namespace BookStore.Tests
       //Arrange
       CollectionAssert.AreEqual(testList, result);
     }
+    //tests whether customer instances are being linked to book instances via the join table
     [TestMethod]
     public void AddCustomer_ToBookObject()
     {
@@ -58,16 +61,7 @@ namespace BookStore.Tests
       //Assert
       Assert.AreEqual(resultOne, resultTwo);
     }
-    [TestMethod]
-    public void GetAll_BookObjects_FromDatabase()
-    {
-      //Arrange
-
-      //Act
-
-      //Assert
-      // CollectionAssert.AreEqual();
-    }
+    //tests whether find method works on instances of Book class
     [TestMethod]
     public void Find_AllBookObjects_InDatabase()
     {
@@ -79,6 +73,7 @@ namespace BookStore.Tests
       //Assert
       Assert.AreEqual(testBook, foundBook);
     }
+    //tests whether update method works on instances of Book class
     [TestMethod]
     public void Update_BookObject_BooksTable()
     {
@@ -96,6 +91,7 @@ namespace BookStore.Tests
       //Assert
       Assert.AreEqual(updatedName, result);
     }
+    //tests whether Delete method works on single instances of Book class
     [TestMethod]
     public void Delete_SingleBookObject_FromDatabase()
     {

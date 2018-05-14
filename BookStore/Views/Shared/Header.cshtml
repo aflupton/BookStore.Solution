@@ -1,0 +1,38 @@
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-medium">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link dropdown-toggle" href="/flights" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Books
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/flights/new">Add book</a>
+          <a class="dropdown-item" href="/flights/deleteall">Delete all books</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/cities/new">Add customer</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link dropdown-toggle" href="/cities" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Customers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/cities/new">Add customer</a>
+          <a class="dropdown-item" href="/cities/deleteall">Delete all customers</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/flights/new">Add book</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- main header -->
+<div class="col-12 jumbotron">
+  <h1 class="display-2"id="main-header"><em>Book Store</em></h1>
+</div>

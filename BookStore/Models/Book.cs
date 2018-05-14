@@ -110,7 +110,7 @@ namespace BookStore.Models
       {
         conn.Dispose();
       }
-
+    }
       //create join table instance
 
       //find instance in table 'books'
@@ -120,7 +120,19 @@ namespace BookStore.Models
       //delete instance in table 'books'
 
       //delete entire class
-      
+    public void DeleteAll()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE from books;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if(conn != null)
+      {
+        conn.Dispose();
+      }
     }
+
   }
 }

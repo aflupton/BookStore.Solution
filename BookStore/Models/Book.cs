@@ -70,7 +70,7 @@ namespace BookStore.Models
       _image = newImage;
     }
 
-    //override bools for testing
+    //overrides for testing
     public override int GetHashCode()
     {
       return this.GetId().GetHashCode();
@@ -87,7 +87,7 @@ namespace BookStore.Models
         return this.GetId().Equals(newBook.GetId());
       }
     }
-    
+
     //create Book instance in database table 'books'
     public void Save()
     {
@@ -156,7 +156,7 @@ namespace BookStore.Models
       }
     }
 
-    //get all Book instances in Book class
+    //get all single Book instances in Book class
     public static List<Book> GetAll()
     {
       List<Book> allBooks = new List<Book> {};
@@ -332,7 +332,7 @@ namespace BookStore.Models
       }
     }
 
-    //delete entire Book class
+    //delete all Book instances
     public void DeleteAll()
     {
       MySqlConnection conn = DB.Connection();

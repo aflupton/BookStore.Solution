@@ -69,5 +69,58 @@ namespace BookStore.Models
     {
       _image = newImage;
     }
+
+    //create object in database table 'books'
+    public void Save()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"INSERT INTO books (bookName, author, isbn, price, image) VALUES (@BookName, @Author, @Isbn, @Price, @Image);";
+
+      MySqlParameter bookName = new MySqlParameter();
+      bookName.ParameterName = "@BookName";
+      bookName.Value = this._bookName;
+      cmd.Parameters.Add(bookName);
+
+      MySqlParameter author = new MySqlParameter();
+      author.ParameterName = "@Author";
+      author.Value = this._author;
+      cmd.Parameters.Add(author);
+
+      MySqlParameter isbn = new MySqlParameter();
+      isbn.ParameterName = "@Isbn";
+      isbn.Value = this._isbn;
+      cmd.Parameters.Add(isbn);
+
+      MySqlParameter price = new MySqlParameter();
+      price.ParameterName = "@Price";
+      price.Value = this._price;
+      cmd.Parameters.Add(price);
+
+      MySqlParameter image = new MySqlParameter();
+      image.ParameterName = "@Image";
+      image.Value = this._image;
+      cmd.Parameters.Add(image);
+
+      cmd.ExecuteNonQuery();
+      _id = (int) cmd.LastInsertedId;
+      conn.Close();
+      if(conn != null)
+      {
+        conn.Dispose();
+      }
+
+      //create join table instance
+
+      //find instance in table 'books'
+
+      //update instance in table 'books'
+
+      //delete instance in table 'books'
+
+      //delete entire class
+      
+    }
   }
 }

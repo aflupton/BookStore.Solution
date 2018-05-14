@@ -24,5 +24,50 @@ namespace BookStore.Models
       _price = price;
       _image = image;
     }
+
+    public void GetId()
+    {
+      return _id;
+    }
+    public void GetName()
+    {
+      return _bookName;
+    }
+    public string SetName(string newBookName)
+    {
+      _bookName = newBookName;
+    }
+    public void GetAuthor()
+    {
+      return _author;
+    }
+    public string SetAuthor(string newAuthor)
+    {
+      _author = newAuthor;
+    }
+    public void GetIsbn()
+    {
+      return _isbn;
+    }
+    public int SetIsbn(int newIsbn)
+    {
+      _isbn = newIsbn;
+    }
+    public void GetPrice()
+    {
+      return _price;
+    }
+    public double SetPrice(double newPrice)
+    {
+      _price = newPrice;
+    }
+    public void GetImage()
+    {
+      return _image;
+    }
+    public string SetImage(string newImage)
+    {
+      _image = newImage;
+    }
   }
 }

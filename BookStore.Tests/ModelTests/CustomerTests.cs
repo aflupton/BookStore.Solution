@@ -30,7 +30,7 @@ namespace BookStore.Tests
       CollectionAssert.AreEqual(testList, result);
     }
     [TestMethod]
-    public void test_GetaAll()
+    public void test_GetAll()
     {
       //Arrange
       Customer testCustomer = new Customer ("1", "1");
@@ -38,9 +38,9 @@ namespace BookStore.Tests
       testCustomer.Save();
       //Act
       List<Customer> result = Customer.GetAll();
-      
+
       //Arrange
-      Assert.AreEqual(2, result.Count;)
+      Assert.AreEqual(2, result.Count);
     }
     [TestMethod]
     public void test_Update()
@@ -48,10 +48,11 @@ namespace BookStore.Tests
       Customer testCustomer = new Customer ("1", "1");
       testCustomer.Save();
       testCustomer.Update("2","2");
-      Customer newCustomer = new newCustomer("2","2")
+      Customer newCustomer = new Customer("2","2");
       List<Customer> testList = new List<Customer> {newCustomer};
-      List<Customer> allcustomer = Customer.GetAll();
-      CollectionAssert.AreEqual(allcustomer, newCustomer);
+      List<Customer> allCustomer = Customer.GetAll();
+      Console.WriteLine(allCustomer[0].GetAddress() + ">>>" + testList[0].GetAddress());
+      CollectionAssert.AreEqual(testList, allCustomer);
     }
     [TestMethod]
     public void findindatabase()
@@ -70,17 +71,17 @@ namespace BookStore.Tests
     public void test_join_get()
     {
       //Arrange
-      Customer testItem = Customer Band("1","1");
-      testItem.Save();
+      Customer testCustomer = new Customer("1","1");
+      testCustomer.Save();
 
-      Book testBook = new Book("Imagined Communities", "Benedict Anderson", "2342349430", 21, "Verso", "img");
+      Book testBook = new Book ("img", "Benedict Anderson", "Imagined Communities", "2342349430", "Verso", 21, 1);
       testBook.Save();
 
       //Act
-      Testbook.AddVenue(testItem);
+      testBook.AddCustomerToBook(testCustomer);
 
-      List<Book> result = testItem.GetBooks();
-      List<Book> testList = new List<Book>{testBook;
+      List<Book> result = testCustomer.GetBooks();
+      List<Book> testList = new List<Book>{testBook};
 
       //Assert
       CollectionAssert.AreEqual(testList, result);

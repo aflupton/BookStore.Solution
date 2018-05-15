@@ -88,28 +88,30 @@ namespace BookStore.Models
       }
       return allCustomers;
     }
-    public void Update(string newData, string newParameter)
+    public void Update(string newName, string newAddress)
     {
         MySqlConnection conn = DB.Connection();
         conn.Open();
         MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
 
-        cmd.CommandText = @"UPDATE customers SET customer_name = @NewName, address = @NewAddress WHERE id = @searchId;";
+        cmd.CommandText = @"UPDATE customers SET customer_name = @NewName, customer_address = @NewAddress WHERE id = @searchId;";
 
         MySqlParameter searchId = new MySqlParameter();
         searchId.ParameterName = "@searchId";
         searchId.Value = _id;
         cmd.Parameters.Add(searchId);
 
-        MySqlParameter data = new MySqlParameter();
-        data.ParameterName = "@NewData";
-        data.Value = newName;
-        cmd.Parameters.Add(data);
+        MySqlParameter name = new MySqlParameter();
+        name.ParameterName = "@NewName";
+        name.Value = newName;
+        cmd.Parameters.Add(name);
 
+        MySqlParameter address = new MySqlParameter();
+        address.ParameterName = "@NewAddress";
+        address.Value = newName;
+        cmd.Parameters.Add(address);
 
         cmd.ExecuteNonQuery();
-
-
         conn.Close();
         if (conn != null)
         {
@@ -168,8 +170,8 @@ namespace BookStore.Models
         conn.Open();
         MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT books.* FROM customers
-            JOIN books_customers ON (customers.id = books_customers.customer_id)
-            JOIN books ON (books_customers.book_id = books.id)
+            JOIN books_customers ON (customers.id = books_customers.customers_id)
+            JOIN books ON (books_customers.books_id = books.id)
             WHERE customers.id = @CustomerId;";
 
         MySqlParameter categoryIdParameter = new MySqlParameter();
@@ -213,7 +215,7 @@ namespace BookStore.Models
              bool idEquality = this.GetId() == newItem.GetId();
              bool descriptionEquality = this.GetName() == newItem.GetName();
              bool addressequality = this.GetAddress() == newItem.GetAddress();
-
+             Console.WriteLine(addressequality);
              return (idEquality && descriptionEquality && addressequality);
            }
         }

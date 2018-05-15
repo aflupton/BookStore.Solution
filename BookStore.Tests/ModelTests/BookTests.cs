@@ -18,18 +18,18 @@ namespace BookStore.Tests
       Book.DeleteAll();
     }
     //test whether two identical books are recognized as identical instances
-    // [TestMethod]
-    // public void Saves_TwoBooks_AsSame()
-    // {
-    //   //Arrange
-    //   Book firstBook = new Book ("img", "e.e. cummings", "The Enormous Room", "3596215002", "Penguin", 9.99, 1);
-    //   Book secondBook = new Book ("img", "e.e. cummings", "The Enormous Room", "3596215002", "Penguin", 9.99, 1);
-    //   //Act
-    //   firstBook.Save();
-    //   secondBook.Save();
-    //   //Assert
-    //   Assert.AreEqual(firstBook, secondBook);
-    // }
+    [TestMethod]
+    public void Saves_TwoBooks_AsSame()
+    {
+      //Arrange
+      Book firstBook = new Book ("img", "e.e. cummings", "The Enormous Room", "3596215002", "Penguin", 9.99, 1);
+      Book secondBook = new Book ("img", "e.e. cummings", "The Enormous Room", "3596215002", "Penguin", 9.99, 1);
+      //Act
+      firstBook.Save();
+      secondBook.Save();
+      //Assert
+      Assert.AreEqual(firstBook, secondBook);
+    }
     //tests whether Save method works on the Book class
     [TestMethod]
     public void Save_InstanceToDatabase_BooksTable()

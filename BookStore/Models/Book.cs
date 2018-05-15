@@ -28,8 +28,6 @@ namespace BookStore.Models
       _publisher = publisher;
       _price = price;
       _quantity = quantity;
-
-
     }
 
     public int GetId()
@@ -107,7 +105,16 @@ namespace BookStore.Models
       else
       {
         Book newBook = (Book) otherBook;
-        return this.GetId().Equals(newBook.GetId());
+        bool idEquality = this.GetId() == newBook.GetId();
+        bool imageEquality = this.GetImage() == newBook.GetImage();
+        bool authorEquality = this.GetAuthor() == newBook.GetAuthor();
+        bool nameEquality = this.GetName() == newBook.GetName();
+        bool isbnEquality = this.GetIsbn() == newBook.GetIsbn();
+        bool publisherEquality = this.GetPublisher() == newBook.GetPublisher();
+        bool priceEquality = this.GetPrice() == newBook.GetPrice();
+        bool quantEquality = this.GetQuantity() == newBook.GetQuantity();
+        return (idEquality && imageEquality && authorEquality && nameEquality && isbnEquality && publisherEquality && priceEquality && quantEquality);
+
       }
     }
 

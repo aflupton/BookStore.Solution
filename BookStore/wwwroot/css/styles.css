@@ -2,7 +2,15 @@ body {
   padding: 20px;
   padding-top: 50px;
 }
+.img-thumbnail {
+  display: block;
+  max-width: 15px;
+  max-height: 15px;
 
-footer {
+}
+.container {
+  font-size: 100pt;
+}
+#links {
   
 }

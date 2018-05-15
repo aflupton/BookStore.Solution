@@ -212,11 +212,10 @@ namespace BookStore.Models
           else
           {
              Customer newItem = (Customer) otherItem;
-             bool idEquality = this.GetId() == newItem.GetId();
              bool descriptionEquality = this.GetName() == newItem.GetName();
-             bool addressequality = this.GetAddress() == newItem.GetAddress();
-             Console.WriteLine(addressequality);
-             return (idEquality && descriptionEquality && addressequality);
+             bool addressEquality = this.GetAddress() == newItem.GetAddress();
+
+             return (descriptionEquality && addressEquality);
            }
         }
         // public override int GetHashCode()

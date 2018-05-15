@@ -105,7 +105,6 @@ namespace BookStore.Models
       else
       {
         Book newBook = (Book) otherBook;
-        bool idEquality = this.GetId() == newBook.GetId();
         bool imageEquality = this.GetImage() == newBook.GetImage();
         bool authorEquality = this.GetAuthor() == newBook.GetAuthor();
         bool nameEquality = this.GetName() == newBook.GetName();
@@ -113,7 +112,7 @@ namespace BookStore.Models
         bool publisherEquality = this.GetPublisher() == newBook.GetPublisher();
         bool priceEquality = this.GetPrice() == newBook.GetPrice();
         bool quantEquality = this.GetQuantity() == newBook.GetQuantity();
-        return (idEquality && imageEquality && authorEquality && nameEquality && isbnEquality && publisherEquality && priceEquality && quantEquality);
+        return (imageEquality && authorEquality && nameEquality && isbnEquality && publisherEquality && priceEquality && quantEquality);
 
       }
     }

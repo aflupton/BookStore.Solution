@@ -15,7 +15,7 @@ namespace BookStore.Tests
     }
     public void Dispose()
     {
-      Customer.DeleteAll();
+      // Customer.DeleteAll();
     }
     [TestMethod]
     public void Save_InstanceToDatabase_CustomerTable()
@@ -27,6 +27,7 @@ namespace BookStore.Tests
       List<Customer> result = Customer.GetAll();
       List<Customer> testList = new List<Customer>{testCustomer};
       //Arrange
+      Console.WriteLine(testList.Count + "()" + result.Count);
       CollectionAssert.AreEqual(testList, result);
     }
     [TestMethod]
@@ -55,7 +56,7 @@ namespace BookStore.Tests
       CollectionAssert.AreEqual(testList, allCustomer);
     }
     [TestMethod]
-    public void findindatabase()
+    public void find_in_database()
     {
       //Arrange
       Customer testItem = new Customer("1","1");

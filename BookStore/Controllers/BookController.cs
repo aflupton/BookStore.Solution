@@ -11,7 +11,7 @@ namespace Bookstore.Controllers
       public ActionResult Index()
       {
       List<Book> allBooks = Book.GetAll();
-      return View("Index", allBooks);
+      return View(allBooks);
       }
       [HttpGet("/books/new")]
       public ActionResult CreateForm()

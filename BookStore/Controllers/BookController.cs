@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using BookStore.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Bookstore.Controllers
+{
+  public class BookController : Controller
+  {
+      [HttpGet("/books")]
+      public ActionResult Index()
+      {
+      List<Book> allBooks = Book.GetAll();
+      return View(allBooks);
+      }
+      [HttpGet("/books/new")]
+      public ActionResult CreateForm()
+      {
+        return View("Form");
+      }
+      [HttpPost("/books")]
+      public ActionResult Create()
+      {
+        Book newBook = new Book(Request.Form["book_name"], Request.Form["book_author"], Request.Form["book_isbn"], Double.Parse(Request.Form["book_price"]), Request.Form["book_publisher"], Request.Form["book_image"]);
+        newBook.Save();
+        return RedirectToAction("Success", "Index");
+      }
+      [HttpGet("/books/{id}")]
+      public ActionResult Details(int id)
+      {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Book selectedBook = Book.Find(id);
+        List<Customer> bookCustomers = selectedBook.GetCustomers();
+        model.Add("selectedBook", selectedBook);
+        model.Add("bookCustomers", bookCustomers);
+        return View("Details", model);
+      }
+
+  }
+}

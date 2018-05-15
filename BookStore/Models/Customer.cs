@@ -45,10 +45,10 @@ namespace BookStore.Models
       conn.Open();
 
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO customers (name, address) VALUES (@name, @address);";
+      cmd.CommandText = @"INSERT INTO customers (customer_name, customer_address) VALUES (@Name, @Address);";
 
       MySqlParameter name = new MySqlParameter();
-      name.ParameterName = "@name";
+      name.ParameterName = "@Name";
       name.Value = this._name;
       cmd.Parameters.Add(name);
       cmd.ExecuteNonQuery();
@@ -87,14 +87,9 @@ namespace BookStore.Models
         MySqlConnection conn = DB.Connection();
         conn.Open();
         MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-        if (newParameter == "name")
-        {
-          cmd.CommandText = @"UPDATE customers SET name = @newData WHERE id = @searchId;";
-        }
-        else
-        {
-        cmd.CommandText = @"UPDATE customers SET address = @newData WHERE id = @searchId;";
-        }
+
+        cmd.CommandText = @"UPDATE customers SET customer_name = @NewName, address = @NewAddress WHERE id = @searchId;";
+
         MySqlParameter searchId = new MySqlParameter();
         searchId.ParameterName = "@searchId";
         searchId.Value = _id;
@@ -181,13 +176,16 @@ namespace BookStore.Models
         while(rdr.Read())
         {
           int id = rdr.GetInt32(0);
-          string bookName = rdr.GetString(1);
+          string image = rdr.GetString(1);
           string author = rdr.GetString(2);
-          string isbn = rdr.GetString(3);
-          double price = rdr.GetDouble(4);
-          string image = rdr.GetString(5);
+          string bookName = rdr.GetString(3);
+          string isbn = rdr.GetString(4);
+          string publisher = rdr.GetString(5);
+          double price = rdr.GetDouble(6);
+          int quantity = rdr.GetString(7)
 
-          Book newBook = new Book (bookName, author, isbn, price, image, id);
+
+          Book newBook = new Book (image, author, bookName, isbn, publisher, price, id);
           Books.Add(newBook);
         }
         conn.Close();

@@ -1,8 +1,8 @@
 /Users/Guest/Desktop/BookStore.Solution/BookStore/bin/Debug/netcoreapp1.1/BookStore.deps.json
 /Users/Guest/Desktop/BookStore.Solution/BookStore/bin/Debug/netcoreapp1.1/BookStore.runtimeconfig.json
 /Users/Guest/Desktop/BookStore.Solution/BookStore/bin/Debug/netcoreapp1.1/BookStore.runtimeconfig.dev.json
-/Users/Guest/Desktop/BookStore.Solution/BookStore/obj/Debug/netcoreapp1.1/BookStore.AssemblyInfo.cs
 /Users/Guest/Desktop/BookStore.Solution/BookStore/bin/Debug/netcoreapp1.1/BookStore.dll
 /Users/Guest/Desktop/BookStore.Solution/BookStore/bin/Debug/netcoreapp1.1/BookStore.pdb
+/Users/Guest/Desktop/BookStore.Solution/BookStore/obj/Debug/netcoreapp1.1/BookStore.AssemblyInfo.cs
 /Users/Guest/Desktop/BookStore.Solution/BookStore/obj/Debug/netcoreapp1.1/BookStore.dll
 /Users/Guest/Desktop/BookStore.Solution/BookStore/obj/Debug/netcoreapp1.1/BookStore.pdb

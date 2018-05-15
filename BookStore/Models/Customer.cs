@@ -51,6 +51,12 @@ namespace BookStore.Models
       name.ParameterName = "@Name";
       name.Value = this._name;
       cmd.Parameters.Add(name);
+
+      MySqlParameter address = new MySqlParameter();
+      address.ParameterName = "@Address";
+      address.Value = this._address;
+      cmd.Parameters.Add(address);
+
       cmd.ExecuteNonQuery();
       _id = (int) cmd.LastInsertedId;
       conn.Close();
@@ -187,7 +193,7 @@ namespace BookStore.Models
           string isbn = rdr.GetString(4);
           string publisher = rdr.GetString(5);
           double price = rdr.GetDouble(6);
-          int quantity = rdr.GetString(7)
+          int quantity = rdr.GetInt32(7);
 
 
           Book newBook = new Book (image, author, bookName, isbn, publisher, price, id);

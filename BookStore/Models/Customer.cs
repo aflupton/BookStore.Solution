@@ -88,7 +88,7 @@ namespace BookStore.Models
       }
       return allCustomers;
     }
-    public void Update(string newName, string newAddress)
+    public void Update(string newData, string newParameter)
     {
         MySqlConnection conn = DB.Connection();
         conn.Open();
@@ -101,19 +101,14 @@ namespace BookStore.Models
         searchId.Value = _id;
         cmd.Parameters.Add(searchId);
 
-        MySqlParameter name = new MySqlParameter();
-        name.ParameterName = "@NewName";
-        name.Value = newName;
-        cmd.Parameters.Add(name);
+        MySqlParameter data = new MySqlParameter();
+        data.ParameterName = "@NewData";
+        data.Value = newName;
+        cmd.Parameters.Add(data);
 
-        MySqlParameter address = new MySqlParameter();
-        address.ParameterName = "@NewAddress";
-        address.Value = newAddress;
-        cmd.Parameters.Add(address);
 
         cmd.ExecuteNonQuery();
-        _name = newName;
-        _address = newAddress;
+
 
         conn.Close();
         if (conn != null)
@@ -206,6 +201,26 @@ namespace BookStore.Models
         }
         return Books;
     }
+        public override bool Equals(System.Object otherItem)
+        {
+          if (!(otherItem is Customer))
+          {
+            return false;
+          }
+          else
+          {
+             Customer newItem = (Customer) otherItem;
+             bool idEquality = this.GetId() == newItem.GetId();
+             bool descriptionEquality = this.GetName() == newItem.GetName();
+             bool addressequality = this.GetAddress() == newItem.GetAddress();
+
+             return (idEquality && descriptionEquality && addressequality);
+           }
+        }
+        // public override int GetHashCode()
+        // {
+        //      return this.GetId().GetHashCode();
+        // }
 
   }
 }

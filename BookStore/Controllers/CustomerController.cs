@@ -23,7 +23,7 @@ namespace Bookstore.Controllers
     {
       Customer newCustomer = new Customer(Request.Form["customer_name"], Request.Form["customer_address"]);
       newCustomer.Save();
-      return RedirectToAction("Success", "Index");
+      return RedirectToAction("Index");
     }
     [HttpGet("/customers/{id}")]
     public ActionResult Details(int id)

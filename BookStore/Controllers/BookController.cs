@@ -11,7 +11,7 @@ namespace Bookstore.Controllers
       public ActionResult Index()
       {
       List<Book> allBooks = Book.GetAll();
-      return View(allBooks);
+      return View("Index", allBooks);
       }
       [HttpGet("/books/new")]
       public ActionResult CreateForm()
@@ -23,7 +23,7 @@ namespace Bookstore.Controllers
       {
         Book newBook = new Book(Request.Form["book_image"], Request.Form["book_author"], Request.Form["book_name"], Request.Form["book_isbn"], Request.Form["book_publisher"], Double.Parse(Request.Form["book_price"]), int.Parse(Request.Form["quantity"]));
         newBook.Save();
-        return RedirectToAction("Success", "Index");
+        return RedirectToAction("Index");
       }
       [HttpGet("/books/{id}")]
       public ActionResult Details(int id)

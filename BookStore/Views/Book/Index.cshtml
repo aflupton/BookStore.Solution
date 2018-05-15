@@ -10,12 +10,53 @@ Layout = "_Layout";
       <ul>
         @foreach(var book in Model)
         {
-          <li><a href="/books/@book.GetId()">@book.GetName()</a></li>
+          <li>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#@book.GetId()</th>
+                  <th scope="col"><strong>@book.GetAuthor()</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Image</th>
+                  <div class="container">
+                    <td><img class="img-thumbnail" src="@book.GetImage()" alt="image" style="150px"></td>
+                  </div>
+                </tr>
+                <tr>
+                  <th scope="row">Author</th>
+                  <td><a href="/books/@book.GetId()">@book.GetAuthor()</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Title</th>
+                  <td><a href="/books/@book.GetId()">@book.GetName()</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">ISBN</th>
+                  <td><a href="/books/@book.GetId()">@book.GetIsbn()</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Publisher</th>
+                  <td><a href="/books/@book.GetId()">@book.GetPublisher()</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Price</th>
+                  <td><a href="/books/@book.GetId()">@book.GetPrice()</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Quantity</th>
+                  <td><a href="/books/@book.GetId()">@book.GetQuantity()</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
         }
       </ul>
     }
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6" id="links">
     <h5><a href="/books/new">Buy a new book</a></h5>
     <h5><a href="/customers/new">Enter a new customer</a></h5>
     <h5><a href="/">Return to the home page</a></h5>

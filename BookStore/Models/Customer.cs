@@ -51,6 +51,12 @@ namespace BookStore.Models
       name.ParameterName = "@Name";
       name.Value = this._name;
       cmd.Parameters.Add(name);
+
+      MySqlParameter address = new MySqlParameter();
+      address.ParameterName = "@Address";
+      address.Value = this._address;
+      cmd.Parameters.Add(address);
+
       cmd.ExecuteNonQuery();
       _id = (int) cmd.LastInsertedId;
       conn.Close();
@@ -88,7 +94,7 @@ namespace BookStore.Models
         conn.Open();
         MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
 
-        cmd.CommandText = @"UPDATE customers SET customer_name = @NewName, address = @NewAddress WHERE id = @searchId;";
+        cmd.CommandText = @"UPDATE customers SET customer_name = @NewName, customer_address = @NewAddress WHERE id = @searchId;";
 
         MySqlParameter searchId = new MySqlParameter();
         searchId.ParameterName = "@searchId";
@@ -102,13 +108,10 @@ namespace BookStore.Models
 
         MySqlParameter address = new MySqlParameter();
         address.ParameterName = "@NewAddress";
-        address.Value = newAddress;
+        address.Value = newName;
         cmd.Parameters.Add(address);
 
         cmd.ExecuteNonQuery();
-        _name = newName;
-        _address = newAddress;
-
         conn.Close();
         if (conn != null)
         {
@@ -167,8 +170,8 @@ namespace BookStore.Models
         conn.Open();
         MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT books.* FROM customers
-            JOIN books_customers ON (customers.id = books_customers.customer_id)
-            JOIN books ON (books_customers.book_id = books.id)
+            JOIN books_customers ON (customers.id = books_customers.customers_id)
+            JOIN books ON (books_customers.books_id = books.id)
             WHERE customers.id = @CustomerId;";
 
         MySqlParameter categoryIdParameter = new MySqlParameter();
@@ -187,7 +190,7 @@ namespace BookStore.Models
           string isbn = rdr.GetString(4);
           string publisher = rdr.GetString(5);
           double price = rdr.GetDouble(6);
-          int quantity = rdr.GetString(7)
+          int quantity = rdr.GetInt32(7);
 
 
           Book newBook = new Book (image, author, bookName, isbn, publisher, price, id);
@@ -200,6 +203,25 @@ namespace BookStore.Models
         }
         return Books;
     }
+        public override bool Equals(System.Object otherItem)
+        {
+          if (!(otherItem is Customer))
+          {
+            return false;
+          }
+          else
+          {
+             Customer newItem = (Customer) otherItem;
+             bool descriptionEquality = this.GetName() == newItem.GetName();
+             bool addressEquality = this.GetAddress() == newItem.GetAddress();
+
+             return (descriptionEquality && addressEquality);
+           }
+        }
+        // public override int GetHashCode()
+        // {
+        //      return this.GetId().GetHashCode();
+        // }
 
   }
 }

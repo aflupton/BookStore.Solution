@@ -28,8 +28,6 @@ namespace BookStore.Models
       _publisher = publisher;
       _price = price;
       _quantity = quantity;
-
-
     }
 
     public int GetId()
@@ -90,7 +88,7 @@ namespace BookStore.Models
     }
     public void SetQuantity(int newQuantity)
     {
-      _quantity = quantity;
+      _quantity = newQuantity;
     }
 
     //overrides for testing
@@ -107,7 +105,15 @@ namespace BookStore.Models
       else
       {
         Book newBook = (Book) otherBook;
-        return this.GetId().Equals(newBook.GetId());
+        bool imageEquality = this.GetImage() == newBook.GetImage();
+        bool authorEquality = this.GetAuthor() == newBook.GetAuthor();
+        bool nameEquality = this.GetName() == newBook.GetName();
+        bool isbnEquality = this.GetIsbn() == newBook.GetIsbn();
+        bool publisherEquality = this.GetPublisher() == newBook.GetPublisher();
+        bool priceEquality = this.GetPrice() == newBook.GetPrice();
+        bool quantEquality = this.GetQuantity() == newBook.GetQuantity();
+        return (imageEquality && authorEquality && nameEquality && isbnEquality && publisherEquality && priceEquality && quantEquality);
+
       }
     }
 
@@ -202,7 +208,7 @@ namespace BookStore.Models
       while (rdr.Read())
       {
         int id = rdr.GetInt32(0);
-        string image = rdr.GetString(1)
+        string image = rdr.GetString(1);
         string author = rdr.GetString(2);
         string bookName = rdr.GetString(3);
         string isbn = rdr.GetString(4);
@@ -229,7 +235,7 @@ namespace BookStore.Models
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = @"SELECT customers.* FROM books
       JOIN books_customers ON (books.id = books_customers.books_id)
-      JOIN customers ON (books_customer.customers_id = customers_id) WHERE books.id = @BookId;";
+      JOIN customers ON (books_customers.customers_id = customers_id) WHERE books.id = @BookId;";
 
       MySqlParameter BookId = new MySqlParameter();
       BookId.ParameterName = "@BookId";
@@ -268,7 +274,7 @@ namespace BookStore.Models
       cmd.Parameters.Add(searchId);
 
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-      int id = 0;
+      int bookId = 0;
       string image = "";
       string author = "";
       string bookName = "";
@@ -280,7 +286,7 @@ namespace BookStore.Models
 
       while(rdr.Read())
       {
-        id = rdr.GetInt32(0);
+        bookId = rdr.GetInt32(0);
         image = rdr.GetString(1);
         author = rdr.GetString(2);
         bookName = rdr.GetString(3);
@@ -323,10 +329,10 @@ namespace BookStore.Models
       author.Value = bookAuthor;
       cmd.Parameters.Add(author);
 
-      MySqlParameter bookName = new MySqlParameter();
-      bookName.ParameterName = "@BookName";
-      bookName.Value = bookName;
-      cmd.Parameters.Add(bookName);
+      MySqlParameter name = new MySqlParameter();
+      name.ParameterName = "@BookName";
+      name.Value = bookName;
+      cmd.Parameters.Add(name);
 
       MySqlParameter isbn = new MySqlParameter();
       isbn.ParameterName = "@Isbn";
@@ -343,10 +349,10 @@ namespace BookStore.Models
       price.Value = _id;
       cmd.Parameters.Add(price);
 
-      MySqlParameter quantity = new MySqlParameter();
-      quantity.ParameterName = "@Quantity";
-      quantity.Value = quantity;
-      cmd.Parameters.Add(quantity);
+      MySqlParameter bookQuant = new MySqlParameter();
+      bookQuant.ParameterName = "@Quantity";
+      bookQuant.Value = quantity;
+      cmd.Parameters.Add(bookQuant);
 
 
 
@@ -373,7 +379,7 @@ namespace BookStore.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM books WHERE books_id = @BookId
+      cmd.CommandText = @"DELETE FROM books WHERE id = @BookId
       DELETE FROM books_customers WHERE books_id = @BookId;";
 
       MySqlParameter id = new MySqlParameter();
@@ -396,6 +402,7 @@ namespace BookStore.Models
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = @"DELETE from books;";
+
       cmd.ExecuteNonQuery();
       conn.Close();
       if(conn != null)

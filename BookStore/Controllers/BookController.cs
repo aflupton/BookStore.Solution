@@ -21,7 +21,7 @@ namespace Bookstore.Controllers
       [HttpPost("/books")]
       public ActionResult Create()
       {
-        Book newBook = new Book(Request.Form["book_name"], Request.Form["book_author"], Request.Form["book_isbn"], Double.Parse(Request.Form["book_price"]), Request.Form["book_publisher"], Request.Form["book_image"]);
+        Book newBook = new Book(Request.Form["book_image"], Request.Form["book_author"], Request.Form["book_name"], Request.Form["book_isbn"], Request.Form["book_publisher"], Double.Parse(Request.Form["book_price"]), int.Parse(Request.Form["quantity"]));
         newBook.Save();
         return RedirectToAction("Success", "Index");
       }

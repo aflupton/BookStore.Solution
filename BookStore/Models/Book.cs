@@ -215,7 +215,7 @@ namespace BookStore.Models
         string publisher = rdr.GetString(5);
         double price = rdr.GetDouble(6);
         int quantity = rdr.GetInt32(7);
-        ;
+        
         Book newBook = new Book(image, author, bookName, isbn, publisher, price, quantity, id);
         allBooks.Add(newBook);
       }

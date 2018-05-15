@@ -1,0 +1,23 @@
+@{
+Layout = "_Layout";
+}
+<h2>Books Purchased</h2>
+
+<div class="row">
+  <div class="col-md-6">
+    @if(Model.Count != 0)
+    {
+      <ul>
+        @foreach(var book in Model)
+        {
+          <li><a href="/books/@book.GetId()">@book.GetName()</a></li>
+        }
+      </ul>
+    }
+  </div>
+  <div class="col-md-6">
+    <h5><a href="/books/new">Buy a new book</a></h5>
+    <h5><a href="/customers/new">Enter a new customer</a></h5>
+    <h5><a href="/">Return to the home page</a></h5>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+https://images.isbndb.com/covers/60/34/9781593276034.jpg ,PythonCrashCourse:AHands-OnProject-BasedIntroductiontoProgramming,1593276036, 9781593276034,No Starch Press,2015-11-01,Paperback
+https://images.isbndb.com/covers/14/72/9781974431472.jpg ,ASmarterWaytoLearnPython:Learnitfaster.Rememberitlonger.,1974431479, 9781974431472,CreateSpace Independent Publishing Platform,2017-08-09,Paperback
+https://images.isbndb.com/covers/57/39/9781449355739.jpg ,LearningPython5thEdition,1449355730, 9781449355739,O&;Reilly Media,2013-07-06,Paperback
+https://images.isbndb.com/covers/66/70/9781549776670.jpg ,Python:ForBeginners:ACrashCourseGuideToLearnPythonin1Week,1549776673, 9781549776670,Independently published,2017-09-21,Paperback
+https://images.isbndb.com/covers/59/90/9781593275990.jpg ,AutomatetheBoringStuffwithPython:PracticalProgrammingforTotalBeginners,1593275994, 9781593275990,No Starch Press,2015-04-14,Paperback
+https://images.isbndb.com/covers/76/60/9781491957660.jpg ,PythonforDataAnalysis:DataWranglingwithPandasNumPyandIPython,1491957662, 9781491957660,O&;Reilly Media,2017-10-20,Paperback
+https://images.isbndb.com/covers/70/16/9781449357016.jpg ,PythonPocketReference:PythonInYourPocket(PocketReference(O&;Reilly)),1449357016, 9781449357016,O&;Reilly Media,2014-02-09,Paperback
+https://images.isbndb.com/covers/60/08/9781491946008.jpg ,FluentPython:ClearConciseandEffectiveProgramming,1491946008, 9781491946008,O&;Reilly Media,2015-08-20,Paperback
+https://images.isbndb.com/covers/44/33/9781617294433.jpg ,DeepLearningwithPython,1617294438, 9781617294433,Manning Publications,2017-12-22,Paperback
+https://images.isbndb.com/covers/93/62/9781449359362.jpg ,IntroducingPython:ModernComputinginSimplePackages,1449359361, 9781449359362,O&;Reilly Media,2014-12-04,Paperback
+https://images.isbndb.com/covers/33/05/9781775093305.jpg ,PythonTricks:ABuffetofAwesomePythonFeatures,1775093301, 9781775093305,Dan Bader,2017-10-25,Paperback
+https://images.isbndb.com/covers/11/20/9781530051120.jpg ,PythonforEverybody:ExploringDatainPython3,1530051126, 9781530051120,CreateSpace Independent Publishing Platform,2016-04-09,Paperback
+https://images.isbndb.com/covers/42/87/9780134034287.jpg ,EffectivePython:59SpecificWaystoWriteBetterPython(EffectiveSoftwareDevelopmentSeries),0134034287, 9780134034287,Addison-Wesley Professional,2015-03-08,Paperback
+https://images.isbndb.com/covers/54/86/9781521155486.jpg ,Python:Programming:YourStepByStepGuideToEasilyLearnPythonin7Days(PythonforBeginnersPythonProgrammingforBeginnersLearnPythonPythonLanguage),1521155488, 9781521155486,Independently published,2017-04-25,Paperback
+https://images.isbndb.com/covers/95/38/9781491919538.jpg ,HeadFirstPython:ABrain-FriendlyGuide,1491919531, 9781491919538,O&;Reilly Media,2016-12-03,Paperback
+https://images.isbndb.com/covers/28/83/9780134692883.jpg ,LearnPython3theHardWay:AVerySimpleIntroductiontotheTerrifyinglyBeautifulWorldofComputersandCode(ZedShaw&;sHardWaySeries),0134692888, 9780134692883,Addison-Wesley Professional,2017-07-07,Paperback
+https://images.isbndb.com/covers/03/77/9781449340377.jpg ,PythonCookbookThirdedition,1449340377, 9781449340377,O&;Reilly Media,2013-06-01,Paperback
+https://images.isbndb.com/covers/22/99/9781491962299.jpg ,Hands-OnMachineLearningwithScikit-LearnandTensorFlow:ConceptsToolsandTechniquestoBuildIntelligentSystems,1491962291, 9781491962299,O&;Reilly Media,2017-04-09,Paperback
+https://images.isbndb.com/covers/27/55/9781590282755.jpg ,PythonProgramming:AnIntroductiontoComputerScience3rdEd.,1590282752, 9781590282755,Franklin Beedle &amp; Associates,2016-08-08,Paperback
+https://images.isbndb.com/covers/20/58/9781491912058.jpg ,PythonDataScienceHandbook:EssentialToolsforWorkingwithData,1491912057, 9781491912058,O&;Reilly Media,2016-12-10,Paperback
+https://images.isbndb.com/covers/74/05/9781259587405.jpg ,IntroductiontoComputationandProgrammingUsingPython:WithApplicationtoUnderstandingData(MITPress),1259587401, 9781259587405,McGraw-Hill Education TAB,2015-10-05,Paperback
+https://images.isbndb.com/covers/96/24/9780262529624.jpg ,PythonforKids:APlayfulIntroductionToProgramming,0262529629, 9780262529624,The MIT Press,2016-08-12,Paperback
+https://images.isbndb.com/covers/40/78/9781593274078.jpg ,Python:-TheBible-3Manuscriptsin1book:-PythonProgrammingForBeginners-PythonProgrammingForIntermediates-PythonProgrammingforAdvanced,1593274076, 9781593274078,No Starch Press,2012-12-12,Paperback
+https://images.isbndb.com/covers/39/06/9781980953906.jpg ,PythonProgrammingfortheAbsoluteBeginner3rdEdition,1980953902, 9781980953906,Independently published,2018-04-28,Paperback
+https://images.isbndb.com/covers/50/09/9781435455009.jpg ,PythonMachineLearning:MachineLearningandDeepLearningwithPythonscikit-learnandTensorFlow2ndEdition,1435455002, 9781435455009,Course Technology,2010-01-01,Paperback
+https://images.isbndb.com/covers/59/33/9781787125933.jpg ,WebScrapingwithPython:CollectingMoreDatafromtheModernWeb,1787125939, 9781787125933,Packt Publishing - ebooks Account,2017-09-20,Paperback
+https://images.isbndb.com/covers/55/71/9781491985571.jpg ,IllustratedGuidetoPython3:ACompleteWalkthroughofBeginningPythonwithUniqueIllustrationsShowinghowPythonReallyWorks.NowcoveringPython3.6(TreadingonPython)(Volume1),1491985577, 9781491985571,O&;Reilly Media,2018-04-14,Paperback
+https://images.isbndb.com/covers/17/58/9781977921758.jpg ,PythonandAlgorithmicThinkingfortheCompleteBeginner:LearntoThinkLikeaProgrammer,1977921752, 9781977921758,CreateSpace Independent Publishing Platform,2017-11-03,Paperback
+https://images.isbndb.com/covers/21/68/9781514802168.jpg ,CrackingCodeswithPython:AnIntroductiontoBuildingandBreakingCiphers,1514802163, 9781514802168,CreateSpace Independent Publishing Platform,2015-08-23,Paperback
+https://images.isbndb.com/covers/82/29/9781593278229.jpg ,DoingMathwithPython:UseProgrammingtoExploreAlgebraStatisticsCalculusandMore!,1593278225, 9781593278229,No Starch Press,2018-01-23,Paperback
+https://images.isbndb.com/covers/64/09/9781593276409.jpg ,ThinkPython:HowtoThinkLikeaComputerScientist,1593276400, 9781593276409,No Starch Press,2015-08-01,Paperback
+https://images.isbndb.com/covers/93/69/9781491939369.jpg ,BlackHatPython:PythonProgrammingforHackersandPentesters,1491939362, 9781491939369,O&;Reilly Media,2015-12-28,Paperback
+https://images.isbndb.com/covers/59/07/9781593275907.jpg ,CodingProjectsinPython,1593275900, 9781593275907,No Starch Press,2014-12-21,Paperback
+https://images.isbndb.com/covers/18/89/9781465461889.jpg ,DataStructuresandAlgorithmsinPython,1465461884, 9781465461889,DK Children,2017-06-06,Paperback
+https://images.isbndb.com/covers/21/76/9788126562176.jpg ,IntroductiontoMachineLearningwithPython:AGuideforDataScientists,812656217X, 9788126562176,Wiley india Pvt. Ltd,2016,Paperback
+https://images.isbndb.com/covers/94/15/9781449369415.jpg ,ElementsofProgrammingInterviewsinPython:TheInsiders&;Guide,1449369413, 9781449369415,O&;Reilly Media,2016-10-21,Paperback
+https://images.isbndb.com/covers/39/46/9781537713946.jpg ,DataSciencefromScratch:FirstPrincipleswithPython,1537713949, 9781537713946,CreateSpace Independent Publishing Platform,2016-09-15,Paperback
+https://images.isbndb.com/covers/14/27/9781491901427.jpg ,ProgrammingPython:PowerfulObject-OrientedProgramming,149190142X, 9781491901427,O&;Reilly Media,2015-04-30,Paperback
+https://images.isbndb.com/covers/81/01/9780596158101.jpg ,InventYourOwnComputerGameswithPython4E,0596158106, 9780596158101,O&;Reilly Media,2011-01-10,Paperback
+https://images.isbndb.com/covers/79/56/9781593277956.jpg ,ArtificialIntelligencewithPython:AComprehensiveGuidetoBuildingIntelligentAppsforPythonBeginnersandDevelopers,1593277954, 9781593277956,No Starch Press,2016-12-16,Paperback
+https://images.isbndb.com/covers/43/92/9781786464392.jpg ,PythonforFinance:AnalyzeBigFinancialData,178646439X, 9781786464392,Packt Publishing - ebooks Account,2017-01-27,Paperback
+https://images.isbndb.com/covers/05/74/9781980820574.jpg ,PythonProgramming:AStepByStepGuideForBeginners,1980820570, 9781980820574,Independently published,2018-04-12,Paperback
+https://images.isbndb.com/covers/52/85/9781491945285.jpg ,BeginningProgrammingwithPythonForDummies(ForDummiesSeries),1491945281, 9781491945285,O&;Reilly Media,2014-12-27,Paperback
+https://images.isbndb.com/covers/85/77/9781986278577.jpg ,LearnPythoninOneDayandLearnItWell(2ndEdition):PythonforBeginnerswithHands-onProject.TheonlybookyouneedtostartcodinginPythonimmediately(LearnCodingFast)(Volume1),1986278573, 9781986278577,CreateSpace Independent Publishing Platform,2018-03-07,Paperback
+https://images.isbndb.com/covers/14/52/9781118891452.jpg ,Murach&;sPythonProgramming,1118891457, 9781118891452,For Dummies,2014-09-22,Paperback
+https://images.isbndb.com/covers/83/30/9781546488330.jpg ,TheHitchhiker&;sGuidetoPython:BestPracticesforDevelopment,1546488332, 9781546488330,CreateSpace Independent Publishing Platform,2017-05-04,Paperback
+https://images.isbndb.com/covers/49/74/9781890774974.jpg ,PythonMachineLearning1stEdition,1890774979, 9781890774974,Mike Murach &amp; Associates,2016-12-13,Paperback
+https://images.isbndb.com/covers/31/76/9781491933176.jpg ,ViolentPython:ACookbookforHackersForensicAnalystsPenetrationTestersandSecurityEngineers,1491933178, 9781491933176,O&;Reilly Media,2016-09-18,Paperback
+https://images.isbndb.com/covers/51/30/9781783555130.jpg ,TheRubyProgrammingLanguage:EverythingYouNeedtoKnow,1783555130, 9781783555130,Packt Publishing - ebooks Account,2015-09,Paperback
+https://images.isbndb.com/covers/95/76/9781597499576.jpg ,RubytheCopycat,1597499579, 9781597499576,Syngress,2012-11-22,Paperback
+https://images.isbndb.com/covers/61/78/9780596516178.jpg ,Ruby:TheRedFairy(RainbowMagic:TheRainbowFairiesNo.1),0596516177, 9780596516178,O&;Reilly Media,2008-02-04,Paperback
+https://images.isbndb.com/covers/22/89/9780439472289.jpg ,TheStoryOfRubyBridges:SpecialAnniversaryEdition,0439472288, 9780439472289,Scholastic,2006-08-01,Paperback
+https://images.isbndb.com/covers/86/13/9780439738613.jpg ,PracticalObject-OrientedDesigninRuby:AnAgilePrimer(Addison-WesleyProfessionalRubySeries),043973861X, 9780439738613,Scholastic Inc.,2005-05-01,Paperback
+https://images.isbndb.com/covers/22/65/9780439472265.jpg ,HeadFirstRuby:ABrain-FriendlyGuide,0439472261, 9780439472265,Scholastic Paperbacks,2010-09-01,Paperback
+https://images.isbndb.com/covers/13/34/9780321721334.jpg ,RubyForBeginners:YourGuideToEasilyLearnRubyProgrammingin7days,0321721330, 9780321721334,Addison-Wesley Professional,2012-09-15,Paperback
+https://images.isbndb.com/covers/26/51/9781449372651.jpg ,Ruby&;sWish,1449372651, 9781449372651,O&;Reilly Media,2015-11-30,Paperback
+https://images.isbndb.com/covers/77/04/9781521367704.jpg ,RubyonRailsTutorial:LearnWebDevelopmentwithRails(4thEdition)(Addison-WesleyProfessionalRubySeries),1521367701, 9781521367704,Independently published,2017-05-25,Paperback
+https://images.isbndb.com/covers/56/93/9781452145693.jpg ,RubyHoller,1452145695, 9781452145693,Chronicle Books,2015-08-04,Paperback
+https://images.isbndb.com/covers/86/28/9780134598628.jpg ,HelloRuby:AdventuresinCoding,0134598628, 9780134598628,Addison-Wesley Professional,2016-11-17,Paperback
+https://images.isbndb.com/covers/01/57/9780060560157.jpg ,ProgrammingRuby1.9&amp;2.0:ThePragmaticProgrammers&;Guide(TheFacetsofRuby),0060560150, 9780060560157,HarperCollins,2012-04-24,Paperback
+https://images.isbndb.com/covers/50/01/9781250065001.jpg ,HelloRuby:JourneyInsidetheComputer,1250065003, 9781250065001,Feiwel &amp; Friends,2015-10-06,Hardcover
+https://images.isbndb.com/covers/54/99/9781937785499.jpg ,RubyLeeandMe,1937785491, 9781937785499,Pragmatic Bookshelf,2013-07-07,Paperback
+https://images.isbndb.com/covers/53/22/9781250065322.jpg ,EloquentRuby(Addison-WesleyProfessionalRubySeries),1250065321, 9781250065322,Feiwel &amp; Friends,2017-10-03,Hardcover
+https://images.isbndb.com/covers/23/19/9780545782319.jpg ,RubyRedfortBlinkandYouDie,0545782317, 9780545782319,Scholastic Press,2018-01-30,Paperback
+https://images.isbndb.com/covers/41/06/9780321584106.jpg ,EatUp:FoodAppetiteandEatingWhatYouWant,0321584104, 9780321584106,Addison-Wesley Professional,2011-02-21,Paperback
+https://images.isbndb.com/covers/47/26/9780763654726.jpg ,RubyPocketReference:InstantHelpforRubyProgrammers,0763654728, 9780763654726,Candlewick,2018-05-08,Hardcover
+https://images.isbndb.com/covers/95/97/9781781259597.jpg ,BrandNewSchoolBraveNewRuby(RubyandtheBookerBoys#1),1781259593, 9781781259597,Serpent&;s Tail,2018-02-01,Hardcover
+https://images.isbndb.com/covers/60/17/9781491926017.jpg ,York:TheShadowCipher,1491926015, 9781491926017,O&;Reilly Media,2015-08-28,Paperback
+https://images.isbndb.com/covers/76/02/9780545017602.jpg ,AgileWebDevelopmentwithRails5.1,0545017602, 9780545017602,Scholastic Paperbacks,2008-07-01,Paperback
+https://images.isbndb.com/covers/69/44/9780062306944.jpg ,LearntoProgramSecondEdition(TheFacetsofRubySeries),0062306944, 9780062306944,Walden Pond Press,2018-05-01,Paperback
+https://images.isbndb.com/covers/25/10/9781680502510.jpg ,RubyBridgesGoestoSchool:MyTrueStory(ScholasticReaderLevel2),1680502514, 9781680502510,Pragmatic Bookshelf,2017-11-16,Paperback
+https://images.isbndb.com/covers/63/64/9781934356364.jpg ,TheRails5Way(4thEdition)(Addison-WesleyProfessionalRubySeries),1934356360, 9781934356364,Pragmatic Bookshelf,2009-04-07,Paperback
+https://images.isbndb.com/covers/85/53/9780545108553.jpg ,TheRubyCircle:ABloodlinesNovel,0545108551, 9780545108553,Cartwheel Books,2009-12-01,Paperback
+https://images.isbndb.com/covers/76/77/9780134657677.jpg ,TheRubyWay:SolutionsandTechniquesinRubyProgramming(3rdEdition)(Addison-WesleyProfessionalRubySeries),0134657675, 9780134657677,Addison-Wesley Professional,2017-11-24,Paperback
+https://images.isbndb.com/covers/63/35/9781595146335.jpg ,AFrameworkforUnderstandingPoverty;ACognitiveApproach,1595146334, 9781595146335,Razorbill,2015-10-13,Paperback
+https://images.isbndb.com/covers/46/33/9780321714633.jpg ,RubyUnderaMicroscope:AnIllustratedGuidetoRubyInternals,0321714636, 9780321714633,Addison-Wesley Professional,2015-03-12,Paperback
+https://images.isbndb.com/covers/80/16/9781938248016.jpg ,RubyLuBraveandTrue,1938248015, 9781938248016,aha! Process Inc.,2013-02-20,Paperback
+https://images.isbndb.com/covers/52/73/9781593275273.jpg ,RubyInHerOwnTime,1593275277, 9781593275273,No Starch Press,2013-11-22,Paperback
+https://images.isbndb.com/covers/38/94/9781416913894.jpg ,PracticalObject-OrientedDesign:AnAgilePrimerUsingRuby(2ndEdition),1416913890, 9781416913894,Atheneum Books for Young Readers,2006-01-01,Paperback
+https://images.isbndb.com/covers/91/55/9780439579155.jpg ,ThroughMyEyes,0439579155, 9780439579155,Scholastic Press,2004-02-01,Hardcover
+https://images.isbndb.com/covers/64/78/9780134456478.jpg ,RubyintheRuins,0134456475, 9780134456478,Addison-Wesley Professional,2018-08-06,Paperback
+https://images.isbndb.com/covers/92/31/9780590189231.jpg ,TheRuinedHouse:ANovel,0590189239, 9780590189231,Scholastic Press,1999-09-01,Hardcover
+https://images.isbndb.com/covers/23/77/9780763692377.jpg ,LoveRubyLavender,0763692379, 9780763692377,Candlewick,2018-05-08,Hardcover
+https://images.isbndb.com/covers/74/92/9780062467492.jpg ,RubyRedfortFeeltheFear,0062467492, 9780062467492,Harper,2017-11-07,Hardcover
+https://images.isbndb.com/covers/47/86/9780152054786.jpg ,PokémonOmegaRuby&amp;AlphaSapphireVol.6(Pokemon),0152054782, 9780152054786,HMH Books for Young Readers,2005-03-01,Paperback
+https://images.isbndb.com/covers/45/24/9780763694524.jpg ,AFrameworkforUnderstandingPoverty4thEdition,0763694525, 9780763694524,Candlewick,2018-05-08,Paperback
+https://images.isbndb.com/covers/73/86/9781421597386.jpg ,PiperandRuby:TheCourageWithin,1421597381, 9781421597386,VIZ Media - Children&;s,2018-03-06,Paperback
+https://images.isbndb.com/covers/94/82/9781929229482.jpg ,RubyontheOutside,1929229488, 9781929229482,aha Process Inc.,2005-05-15,Paperback
+https://images.isbndb.com/covers/07/42/9781480860742.jpg ,RubytheFosterDog,1480860743, 9781480860742,Archway Publishing,2018-04-24,Paperback
+https://images.isbndb.com/covers/50/44/9781442485044.jpg ,MemoriesUnwound,1442485043, 9781442485044,Simon &amp; Schuster Books for Young Readers,2016-06-14,Paperback
+https://images.isbndb.com/covers/40/89/9781424554089.jpg ,BridgesOutofPoverty:StrategiesforProfessionalandCommunities,142455408X, 9781424554089,Broadstreet Publishing Group LLC,2017-11-15,Hardcover
+https://images.isbndb.com/covers/53/21/9781527205321.jpg ,RubyRed(TheRubyRedTrilogy),1527205320, 9781527205321,Ajmeet Dhal,2017-03-24,Paperback
+https://images.isbndb.com/covers/33/57/9781934583357.jpg ,RubyRidge:TheTruthandTragedyoftheRandyWeaverFamily,1934583359, 9781934583357,aha! Process Inc.,2001,Paperback
+https://images.isbndb.com/covers/15/13/9780312551513.jpg ,TheTempleoftheRubyofFire(GeronimoStiltonNo.14),0312551517, 9780312551513,Square Fish,2012-05-22,Paperback
+https://images.isbndb.com/covers/79/42/9780060007942.jpg ,Ruby&;sBeautyShop(MaxandRuby),006000794X, 9780060007942,Harper Perennial,2002-02-19,Paperback
+https://images.isbndb.com/covers/16/38/9780439661638.jpg ,Ruby&;sChineseNewYear,0439661633, 9780439661638,Scholastic Paperbacks,2004-12-01,MassMarketPaperback
+https://images.isbndb.com/covers/19/41/9780142401941.jpg ,WastingtimeillusionsVersusreality,0142401943, 9780142401941,Puffin Books,2004-11-18,Paperback
+https://images.isbndb.com/covers/33/80/9781250133380.jpg ,,1250133386, 9781250133380,Henry Holt and Co. (BYR),2017-12-26,Hardcover
+https://images.isbndb.com/covers/50/58/9780692095058.jpg ,,0692095055, 9780692095058,Ruby Larry,2018-04-16,Paperback

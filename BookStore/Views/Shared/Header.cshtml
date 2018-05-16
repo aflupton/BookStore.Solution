@@ -8,31 +8,22 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link dropdown-toggle" href="/books" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link" href="/books" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Books
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/books/new">Add book</a>
-          <a class="dropdown-item" href="/books/deleteall">Delete all books</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/customers/new">Add customer</a>
-        </div>
       </li>
       <li class="nav-item active">
-        <a class="nav-link dropdown-toggle" href="/customers" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link" href="/customers" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Customers
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/customers/new">Add customer</a>
-          <a class="dropdown-item" href="/customers/deleteall">Delete all customers</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/books/new">Add book</a>
-        </div>
       </li>
     </ul>
+    <form class="form-inline my-2 my-md-0" action="/search" method="post" name="search">
+      <input class="form-control" type="text" placeholder="Search" name="searchdate">
+    </form>
   </div>
 </nav>
 <!-- main header -->
-<div class="col-12 jumbotron">
-  <h1 class="display-2"id="main-header"><em>Book Store</em></h1>
+<div class="col-12 jumbotron" style="background-image: url(https://blog.oup.com/wp-content/uploads/2015/06/bookstore-indepedent.jpg); border:5px; solid black;">
+  <h1 class="display-2"id="main-header">Book Store</h1>
 </div>

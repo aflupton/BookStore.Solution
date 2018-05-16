@@ -193,7 +193,7 @@ namespace BookStore.Models
           int quantity = rdr.GetInt32(7);
 
 
-          Book newBook = new Book (image, author, bookName, isbn, publisher, price, id);
+          Book newBook = new Book (image, author, bookName, isbn, publisher, price, quantity, id);
           Books.Add(newBook);
         }
         conn.Close();

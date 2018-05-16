@@ -223,7 +223,7 @@ namespace BookStore.Models
         {
              return this.GetId().GetHashCode();
         }
-        
+
         //search for books
         public static List<Customer> SearchCustomer(string customer)
         {
@@ -241,7 +241,7 @@ namespace BookStore.Models
            string name = rdr.GetString(1);
            string address = rdr.GetString(2);
 
-           Book newCustomer = new Book(name, address);
+           Customer newCustomer = new Customer(name, address);
            MyCustomers.Add(newCustomer);
          }
 

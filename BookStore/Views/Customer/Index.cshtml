@@ -1,23 +1,42 @@
 @{
 Layout = "_Layout";
 }
-<h2>Customers</h2>
+<div class="container-fluid">
+  <h2 class="display-4">Customers</h2>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      @if(Model.Count != 0)
+      {
+        <ul>
+          @foreach(var customer in Model)
+          {
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Customer ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Address</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th><a href="/customers/@customer.GetId()">@customer.GetId()</a></th>
+                  <td>@customer.GetName()</td>
+                  <td>@customer.GetAddress()</td>
+                  
+                </tr>
+              </tbody>
+            </table>
 
-<div class="row">
-  <div class="col-md-6">
-    @if(Model.Count != 0)
-    {
-      <ul>
-        @foreach(var customer in Model)
-        {
-          <li><a href="/customers/@customer.GetId()">@customer.GetName()</a></li>
-        }
-      </ul>
-    }
+          }
+        </ul>
+      }
+    </div>
+    <div class="col-md-6">
+      <h5><a href="/customers/new">Enter a new customer</a></h5>
+      <h5><a href="/books/new">Buy a new book</a></h5>
+    </div>
   </div>
-  <div class="col-md-6">
-    <h5><a href="/customers/new">Enter a new customer</a></h5>
-    <h5><a href="/books/new">Buy a new book</a></h5>
-    <h5><a href="/">Return to the home page</a></h5>
-  </div>
+
 </div>

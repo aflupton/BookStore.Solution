@@ -40,8 +40,8 @@ namespace Bookstore.Controllers
     [HttpPost("/customers/checkout")]
     public ActionResult Checkout()
     {
-      Book newPurchase = Book.Find(int.Parse(Request.Form["id"]));
-      Customer purchasingCustomer = Customer.Find(int.Parse(Request.Form["customerName"]));
+      Book newPurchase = Book.Find(int.Parse(Request.Form["bookid"]));
+      Customer purchasingCustomer = Customer.Find(int.Parse(Request.Form["appendName"]));
       newPurchase.AddCustomerToBook(purchasingCustomer);
       return RedirectToAction("Index");
     }

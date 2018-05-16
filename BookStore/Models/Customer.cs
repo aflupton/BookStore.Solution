@@ -169,7 +169,7 @@ namespace BookStore.Models
         MySqlConnection conn = DB.Connection();
         conn.Open();
         MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT books.* FROM customers
+        cmd.CommandText = @"SELECT books* FROM customers
             JOIN books_customers ON (customers.id = books_customers.customers_id)
             JOIN books ON (books_customers.books_id = books.id)
             WHERE customers.id = @CustomerId;";
@@ -219,10 +219,41 @@ namespace BookStore.Models
              return (descriptionEquality && addressEquality);
            }
         }
-        // public override int GetHashCode()
-        // {
-        //      return this.GetId().GetHashCode();
-        // }
+
+        public override int GetHashCode()
+        {
+             return this.GetId().GetHashCode();
+        }
+        
+        //search for books
+        public static List<Customer> SearchCustomer(string customer)
+        {
+         List<Customer> MyCustomers = new List<Customer> {};
+         MySqlConnection conn = DB.Connection();
+         conn.Open();
+
+         MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+         cmd.CommandText = @"SELECT * FROM customers WHERE name LIKE '%" + customer + "%' OR address LIKE '" + customer + "';";
+         Console.WriteLine(cmd.CommandText);
+         MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+         while(rdr.Read())
+         {
+           int id = rdr.GetInt32(0);
+           string name = rdr.GetString(1);
+           string address = rdr.GetString(2);
+
+           Book newCustomer = new Book(name, address);
+           MyCustomers.Add(newCustomer);
+         }
+
+         conn.Close();
+         if(conn != null)
+         {
+           conn.Dispose();
+         }
+         return MyCustomers;
+        }
+
 
   }
 }

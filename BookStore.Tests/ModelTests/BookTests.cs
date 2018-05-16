@@ -111,5 +111,22 @@ namespace BookStore.Tests
     //   Console.WriteLine("Name: " + deletedBook.GetName());
     //   Assert.AreEqual("", deletedBook.GetName());
     // }
+    [TestMethod]
+    public void TestSearchBook()
+    {
+      Book newBook = new Book("img", "My Founder", "This is a test", "2342349430", "Version", 21, 1);
+      newBook.Save();
+      List<Book> MyBooks = Book.SearchBooks("This is a test");
+      Assert.AreEqual("This is a test",MyBooks[0].GetName());
+    }
+
+    [TestMethod]
+    public void TestSearchISBN()
+    {
+      Book newBook = new Book("img", "My Founder", "This is a test", "21231233", "Version", 21, 1);
+      newBook.Save();
+      List<Book> MyBooks = Book.SearchBooks("21231233");
+      Assert.AreEqual("21231233",MyBooks[0].GetIsbn());
+    }
   }
 }

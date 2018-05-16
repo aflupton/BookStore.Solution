@@ -18,13 +18,13 @@ namespace Bookstore.Controllers
       {
         return View("Form");
       }
-      // [HttpPost("/books")]
-      // public ActionResult Create()
-      // {
-      //   Book newBook = new Book(Request.Form["book_image"], Request.Form["book_author"], Request.Form["book_name"], Request.Form["book_isbn"], Request.Form["book_publisher"], Double.Parse(Request.Form["book_price"]), int.Parse(Request.Form["quantity"]));
-      //   newBook.Save();
-      //   return RedirectToAction("Index");
-      // }
+      [HttpPost("/books")]
+      public ActionResult Create()
+      {
+        Book newBook = new Book(Request.Form["book_image"], Request.Form["book_author"], Request.Form["book_name"], Request.Form["book_isbn"], Request.Form["book_publisher"], Double.Parse(Request.Form["book_price"]), int.Parse(Request.Form["quantity"]));
+        newBook.Save();
+        return RedirectToAction("Index", newBook);
+      }
       [HttpGet("/books/{id}")]
       public ActionResult Details(int id)
       {

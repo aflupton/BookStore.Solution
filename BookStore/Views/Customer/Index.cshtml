@@ -4,16 +4,19 @@ Layout = "_Layout";
 <div class="container-fluid">
   <h2 class="display-4">Customers</h2>
   <hr>
-  <div class="col-md-2">
-    <h5><a href="/customers/new">Enter a new customer</a></h5>
-    <hr>
-    <h5><a href="/books/new">Buy a new book</a></h5>
-    <hr>
-  </div>
+
   <div class="row">
     <div class="col-md-6">
       @if(Model.Count != 0)
       {
+        <div class="col-md-2">
+          <h5><a class="btn btn-secondary" href="/customers/new">Enter a new customer</a></h5>
+          <hr>
+          <h5><a class="btn btn-secondary" href="/books/new">Buy a new book</a></h5>
+          <hr>
+          <h5><a class="btn btn-secondary" href="/customers/deleteall">Delete all customers</a></h5>
+          <hr>
+        </div>
         <ul class="list-group">
           @foreach(var customer in Model)
           {
@@ -24,20 +27,26 @@ Layout = "_Layout";
                     <th scope="col">Customer ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Address</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th><a href="/customers/@customer.GetId()">@customer.GetId()</a></th>
+                    <th><a class="btn btn-secondary" href="/customers/@customer.GetId()">@customer.GetId()</a></th>
                     <td>@customer.GetName()</td>
                     <td>@customer.GetAddress()</td>
-
+                    <td><a class="btn btn-secondary"href="/customers/delete">Delete</a></td>
                   </tr>
                 </tbody>
               </table>
             </li>
           }
         </ul>
+      } else
+      {
+        <h5>No customers have been entered.</h5>
+        <h5><a class="btn btn-secondary" href="/customers/new">Enter a new customer</a></h5>
+        <h5><a class="btn btn-secondary" href="/">Return home</a></h5>
       }
     </div>
   </div>

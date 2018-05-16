@@ -151,6 +151,26 @@ namespace BookStore.Models
 
         return newCustomer;
     }
+    public void DeleteCustomer()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM customer WHERE id = @CustomerId
+      DELETE FROM books_customers WHERE customers_id = @CustomerId;";
+
+      MySqlParameter id = new MySqlParameter();
+      id.ParameterName = "@CustomerId";
+      id.Value = this.GetId();
+      cmd.Parameters.Add(id);
+
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if(conn != null)
+      {
+        conn.Dispose();
+      }
+    }
     public static void DeleteAll()
     {
        MySqlConnection conn = DB.Connection();
@@ -223,7 +243,7 @@ namespace BookStore.Models
         {
              return this.GetId().GetHashCode();
         }
-        
+
         //search for books
         public static List<Customer> SearchCustomer(string customer)
         {
@@ -241,7 +261,7 @@ namespace BookStore.Models
            string name = rdr.GetString(1);
            string address = rdr.GetString(2);
 
-           Book newCustomer = new Book(name, address);
+           Customer newCustomer = new Customer(name, address);
            MyCustomers.Add(newCustomer);
          }
 

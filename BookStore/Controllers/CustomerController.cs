@@ -37,5 +37,19 @@ namespace Bookstore.Controllers
       model.Add("allBooks", allBooks);
       return View("Details", model);
     }
+    // [HttpGet("/customers/{id}/delete")]
+    // public ActionResult DeleteCustomer(int id)
+    // {
+    //   Dictionary<string, object> model = new Dictionary<string, object> ();
+    //   Customer selectedCustomer = Customer.Find(id);
+    //   selectedCustomer.DeleteCustomer();
+    //   return View("Details", model);
+    // }
+    [HttpGet("/customers/deleteall")]
+    public ActionResult DeleteAll()
+    {
+      Customer.DeleteAll();
+      return View("Index");
+    }
   }
 }

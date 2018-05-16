@@ -48,15 +48,16 @@ Layout = "_Layout";
                     <td>
                       <form class="form" action="~/customers/checkout" method="post">
                         <div class="form-group">
-                          <input name= "bookid" value="@book.GetId()"></input>
+                          <input class="form-control"name= "bookid" value="user ID: @book.GetId()"  readonly></input>
+                          <hr>
                           <label for="appendName">Select your name:</label>
-                          <br>
                           <select class="form-control" name="appendName">
                             @foreach(var customer in Model["Customers"])
                             {
                               <option value="@customer.GetId()">@customer.GetName()</option>
                             }
                           </select>
+                          <hr>
                           <button class="btn btn-secondary" type="submit" name="button">Submit</button>
                         </div>
                       </form>

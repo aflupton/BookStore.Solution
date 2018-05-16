@@ -2,15 +2,21 @@ body {
   padding: 20px;
   padding-top: 50px;
 }
-.img-thumbnail {
-  display: block;
-  max-width: 15px;
-  max-height: 15px;
-
-}
-.container {
-  font-size: 100pt;
-}
 #links {
-  
+  display: block;
+  float: right;
+}
+.jumbotron {
+  background-image: image(~/img/jumbotron.jpg);
+}
+#main-header {
+  color: white;
+  font-weight: 300;
+}
+footer {
+  display: flex;
+}
+.img {
+  max-width: 150px;
+  max-height: 150px;
 }

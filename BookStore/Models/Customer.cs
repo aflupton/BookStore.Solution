@@ -233,7 +233,7 @@ namespace BookStore.Models
          conn.Open();
 
          MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-         cmd.CommandText = @"SELECT * FROM customers WHERE name LIKE '%" + customer + "%' OR address LIKE '" + customer + "';";
+         cmd.CommandText = @"SELECT * FROM customers WHERE name LIKE '%" + customer +"%\';";
          Console.WriteLine(cmd.CommandText);
          MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
          while(rdr.Read())
@@ -242,7 +242,7 @@ namespace BookStore.Models
            string name = rdr.GetString(1);
            string address = rdr.GetString(2);
 
-           Book newCustomer = new Book(name, address);
+           Customer newCustomer = new Customer(name, address);
            MyCustomers.Add(newCustomer);
          }
 

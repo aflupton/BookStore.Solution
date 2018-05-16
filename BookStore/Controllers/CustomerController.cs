@@ -45,5 +45,11 @@ namespace Bookstore.Controllers
       newPurchase.AddCustomerToBook(purchasingCustomer);
       return RedirectToAction("Index");
     }
+
+    [HttpGet("/customers/deleteall")]
+    public ActionResult DeleteAll()
+    {
+      Customer.DeleteAll();
+      return View("Index");
   }
 }

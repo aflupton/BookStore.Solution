@@ -12,7 +12,7 @@ namespace Bookstore.Controllers
       {
       List<Book> allBooks = Book.GetAll();
       Dictionary<string, object> model = new Dictionary<string, object>();
-      List<Customer> newCustomer = Customer.Getall();
+      List<Customer> newCustomer = Customer.GetAll();
       model.Add("Customers", newCustomer);
       model.Add("Books", allBooks);
 
@@ -40,6 +40,12 @@ namespace Bookstore.Controllers
         model.Add("selectedBook", selectedBook);
         model.Add("bookCustomers", bookCustomers);
         return View("Details", model);
+      }
+      [HttpPost("/books/search")]
+      public ActionResult Search()
+      {
+        List<Book> searchBook = Book.SearchBooks(Request.Form["bookName"]);
+        return View("Index", searchBook);
       }
 
   }

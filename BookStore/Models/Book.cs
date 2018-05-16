@@ -216,11 +216,7 @@ namespace BookStore.Models
         double price = rdr.GetDouble(6);
         int quantity = rdr.GetInt32(7);
 
-<<<<<<< HEAD
         Book newBook = new Book(image, author, name, isbn, publisher, price, quantity, id);
-=======
-        Book newBook = new Book(image, author, bookName, isbn, publisher, price, quantity, id);
->>>>>>> rio
         allBooks.Add(newBook);
       }
       conn.Close();

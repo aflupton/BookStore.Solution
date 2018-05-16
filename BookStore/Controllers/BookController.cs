@@ -28,7 +28,6 @@ namespace Bookstore.Controllers
       {
         Book newBook = new Book(Request.Form["book_image"], Request.Form["book_author"], Request.Form["book_name"], Request.Form["book_isbn"], Request.Form["book_publisher"], Double.Parse(Request.Form["book_price"]), int.Parse(Request.Form["quantity"]));
         newBook.Save();
-        // List<Book> allBooks = Book.GetAll();
         return View("Index");
       }
       [HttpGet("/books/{id}")]

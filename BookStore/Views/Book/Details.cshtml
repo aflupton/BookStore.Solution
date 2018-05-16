@@ -2,5 +2,19 @@
 Layout = "_Layout";
 }
 <div class="container-fluid">
-
+  <h2 class="display-4">Details</h2>
+  @if(Model.Count != 0)
+  {
+    @foreach (var book in Model)
+    {
+      <li>
+        <h4>@book.GetImage()</h4>
+        <h4>@book.GetName()</h4>
+      </li>
+    }
+  }
+  else
+  {
+    <h5>This customer hasn't purchased any books.</h5>
+  }
 </div>

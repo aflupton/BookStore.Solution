@@ -48,6 +48,7 @@ Layout = "_Layout";
                     <td>
                       <form class="form" action="~/customers/checkout" method="post">
                         <div class="form-group">
+                          <input name= "bookid" value="@book.GetId()"></input>
                           <label for="appendName">Select your name:</label>
                           <br>
                           <select class="form-control" name="appendName">

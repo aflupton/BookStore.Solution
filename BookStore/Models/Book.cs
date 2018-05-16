@@ -216,7 +216,11 @@ namespace BookStore.Models
         double price = rdr.GetDouble(6);
         int quantity = rdr.GetInt32(7);
 
+<<<<<<< HEAD
         Book newBook = new Book(image, author, name, isbn, publisher, price, quantity, id);
+=======
+        Book newBook = new Book(image, author, bookName, isbn, publisher, price, quantity, id);
+>>>>>>> rio
         allBooks.Add(newBook);
       }
       conn.Close();
@@ -410,6 +414,37 @@ namespace BookStore.Models
         conn.Dispose();
       }
     }
+    //search for books
+    public static List<Book> SearchBooks(string book)
+    {
+     List<Book> MyBooks = new List<Book> {};
+     MySqlConnection conn = DB.Connection();
+     conn.Open();
 
+     MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+     cmd.CommandText = @"SELECT * FROM books WHERE bookName LIKE '%" + book + "%' OR isbn LIKE '" + book + "';";
+     Console.WriteLine(cmd.CommandText);
+     MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+     while(rdr.Read())
+     {
+       int id = rdr.GetInt32(0);
+       string image = rdr.GetString(1);
+       string author = rdr.GetString(2);
+       string bookName = rdr.GetString(3);
+       string isbn = rdr.GetString(4);
+       string publisher = rdr.GetString(5);
+       double price = rdr.GetDouble(6);
+       int quantity = rdr.GetInt32(7);
+       Book newBook = new Book(image, author, bookName, isbn, publisher, price, quantity, id);
+       MyBooks.Add(newBook);
+     }
+
+     conn.Close();
+     if(conn != null)
+     {
+       conn.Dispose();
+     }
+     return MyBooks;
+    }
   }
 }

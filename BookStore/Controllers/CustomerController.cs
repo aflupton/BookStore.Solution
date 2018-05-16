@@ -37,5 +37,10 @@ namespace Bookstore.Controllers
       model.Add("allBooks", allBooks);
       return View("Details", model);
     }
+    [HttpPost("/customers/checkout")]
+    public ActionResult Checkout()
+    {
+      
+    }
   }
 }

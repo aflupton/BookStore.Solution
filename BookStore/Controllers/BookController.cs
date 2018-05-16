@@ -11,7 +11,12 @@ namespace Bookstore.Controllers
       public ActionResult Index()
       {
       List<Book> allBooks = Book.GetAll();
-      return View(allBooks);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      List<Customer> newCustomer = Customer.Getall();
+      model.Add("Customers", newCustomer);
+      model.Add("Books", allBooks);
+
+      return View(model);
       }
       [HttpGet("/books/new")]
       public ActionResult CreateForm()

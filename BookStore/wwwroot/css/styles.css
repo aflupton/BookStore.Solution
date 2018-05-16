@@ -10,7 +10,7 @@ h1 {
   float: right;
 }
 .jumbotron {
-
+  border-radius: 20px;
 }
 #main-header {
   color: white;

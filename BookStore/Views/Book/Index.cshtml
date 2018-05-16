@@ -1,8 +1,10 @@
+using BookStore.models;
 @{
 Layout = "_Layout";
 }
 <div class="container-fluid">
   <h2 class="display-4">Inventory</h2>
+  <hr>
   <div class="col-md-2">
     <h5><a href="/books/new">Buy a new book</a></h5>
     <hr>
@@ -28,6 +30,7 @@ Layout = "_Layout";
                     <th scope="col"><strong>Publisher</strong></th>
                     <th scope="col"><strong>Price</strong></th>
                     <th scope="col"><strong>Quantity</strong></th>
+                    <th scope="col"><strong>Action</strong></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -40,6 +43,25 @@ Layout = "_Layout";
                     <td>@book.GetPublisher()</td>
                     <td>@book.GetPrice()</td>
                     <td>@book.GetQuantity()</td>
+                    <td>
+                      <form class="form" action="~/customers/checkout" method="post">
+                        <div class="form-group">
+                          <label for="appendName">Select your name:</label>
+                          <br>
+                          <select class="form-control" name="appendName">
+                            @foreach(var customer in Model)
+                            {
+                              <option value="@customer.GetId()">@customer.GetName()</option>
+                            }
+                          </select>
+                          <button class="btn btn-secondary" type="submit" name="button">Submit</button>
+                        </div>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr>
+
+                    <hr>
                   </tr>
                 </tbody>
               </table>

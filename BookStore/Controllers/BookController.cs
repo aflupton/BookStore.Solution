@@ -41,11 +41,11 @@ namespace Bookstore.Controllers
         model.Add("bookCustomers", bookCustomers);
         return View("Details", model);
       }
-      [HttpPost("/books/search")]
+      [HttpPost("/search")]
       public ActionResult Search()
       {
-        List<Book> searchBook = Book.SearchBooks(Request.Form["bookName"]);
-        return View("Index", searchBook);
+        List<Book> searchBook = Book.SearchBooks(Request.Form["searchdate"]);
+        return RedirectToAction("Index");
       }
 
   }

@@ -187,13 +187,14 @@ namespace BookStore.Models
           string image = rdr.GetString(1);
           string author = rdr.GetString(2);
           string bookName = rdr.GetString(3);
+          Console.WriteLine(bookName);
           string isbn = rdr.GetString(4);
           string publisher = rdr.GetString(5);
           double price = rdr.GetDouble(6);
           int quantity = rdr.GetInt32(7);
 
 
-          Book newBook = new Book (image, author, bookName, isbn, publisher, price, quantity, id);
+          Book newBook = new Book (image, author, bookName, isbn, publisher, price, quantity,id);
           Books.Add(newBook);
         }
         conn.Close();
@@ -232,7 +233,7 @@ namespace BookStore.Models
          conn.Open();
 
          MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-         cmd.CommandText = @"SELECT * FROM customers WHERE name LIKE '%" + customer + "%' OR address LIKE '" + customer + "';";
+         cmd.CommandText = @"SELECT * FROM customers WHERE name LIKE '%" + customer +"%\';";
          Console.WriteLine(cmd.CommandText);
          MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
          while(rdr.Read())

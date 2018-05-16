@@ -169,7 +169,7 @@ namespace BookStore.Models
         MySqlConnection conn = DB.Connection();
         conn.Open();
         MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT books.* FROM customers
+        cmd.CommandText = @"SELECT books* FROM customers
             JOIN books_customers ON (customers.id = books_customers.customers_id)
             JOIN books ON (books_customers.books_id = books.id)
             WHERE customers.id = @CustomerId;";

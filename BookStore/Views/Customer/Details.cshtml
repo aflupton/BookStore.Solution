@@ -1,0 +1,22 @@
+@{
+Layout = "_Layout";
+}
+<h2>@Model["selectedCustomer"].GetName()
+
+<h4>Books bought by customer</h4>
+
+
+@if (Model["customerBooks"].Count == 0)
+{
+  <h5>This customer hasn't purchased any books</h5>
+}
+else
+{
+  @foreach (var book in Model["customerBooks"])
+  {
+
+
+  <h4>@book.GetImage()</h4>
+  <h4>@book.GetName()</h4>
+  }
+}

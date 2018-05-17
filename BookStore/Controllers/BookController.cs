@@ -54,14 +54,14 @@ namespace Bookstore.Controllers
       [HttpPost("/search")]
       public ActionResult Search()
       {
-      List<Book> searchBook = Book.SearchBooks(Request.Form["searchdate"]);
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      List<Customer> newCustomer = Customer.GetAll();
-      model.Add("Customers", newCustomer);
-      model.Add("Books", searchBook);
-
-      return View("Index",model);
+        List<Book> searchBook = Book.SearchBooks(Request.Form["searchdate"]);
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        List<Customer> newCustomer = Customer.GetAll();
+        model.Add("Customers", newCustomer);
+        model.Add("Books", searchBook);
+        return RedirectToAction("Index", model);
       }
+
       [HttpGet("/books/{id}/update")]
       public ActionResult UpdateForm(int id)
       {
@@ -69,6 +69,7 @@ namespace Bookstore.Controllers
         return View("BookUpdate", selectedBook);
         // return RedirectToAction("Index")
       }
+
       [HttpPost("/books/{id}/update")]
       public ActionResult PostUpdate(int id)
       {

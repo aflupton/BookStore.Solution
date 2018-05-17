@@ -39,7 +39,7 @@ namespace Bookstore.Controllers
     }
 
     [HttpGet("/customers/{id}/update")]
-    public ActionResult UpdateForm(int id)
+    public ActionResult UpdateCustomer(int id)
     {
       Customer selectedCustomer = Customer.Find(id);
       return View("CustomerUpdate", selectedCustomer);
@@ -53,20 +53,7 @@ namespace Bookstore.Controllers
       return RedirectToAction("Index");
     }
 
-    // [HttpGet("/books/{id}/update")]
-    // public ActionResult UpdateBook(int id)
-    // {
-    //   Book selectedBook = Book.Find(id);
-    //   return View("BookUpdate", selectedBook);
-    //   // return RedirectToAction("Index")
-    // }
-    // [HttpPost("/books/{id}/update")]
-    // public ActionResult PostUpdate(int id)
-    // {
-    //   Book selectedBook = Book.Find(id);
-    //   selectedBook.UpdateBook(Request.Form["book_image"], Request.Form["book_author"], Request.Form["book_title"], Request.Form["book_isbn"], Request.Form["book_publisher"], Double.Parse(Request.Form["book_price"]), int.Parse(Request.Form["quantity"]));
-    //   return RedirectToAction("Index");
-    //
+
     [HttpPost("/customers/checkout")]
     public ActionResult Checkout()
     {
@@ -80,16 +67,17 @@ namespace Bookstore.Controllers
     [HttpGet("/customers/{id}/delete")]
     public ActionResult DeleteCustomer(int id)
     {
-      this.DeleteCustomer(id);
-      Console.WriteLine();
-      return RedirectToAction("Details", "Index", new { id = id });
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Customer selectedCustomer = Customer.Find(id);
+      selectedCustomer.DeleteCustomer();
+      return RedirectToAction("Index", model);
     }
 
     [HttpGet("/customers/deleteall")]
     public ActionResult DeleteAll()
     {
       Customer.DeleteAll();
-      return RedirectToAction("Index");
+      return View("Index");
     }
   }
 }

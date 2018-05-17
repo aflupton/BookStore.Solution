@@ -4,12 +4,7 @@ Layout = "_Layout";
 <div class="container-fluid">
   <h2 class="display-4">Inventory</h2>
   <hr>
-  <!-- <div class="col-md-2">
-    <h5><a href="/books/new">Add a new book</a></h5>
-    <hr>
-    <h5><a href="/customers/new">Enter a new customer</a></h5>
-    <hr>
-  </div> -->
+  
   <div class="row">
     <div class="col-md-12">
       @if(Model["Books"].Count != 0)
@@ -53,9 +48,9 @@ Layout = "_Layout";
                       <td>@book.GetQuantity()</td>
                       <td scope="row">
                         <a class="btn btn-secondary" href="/books/@book.GetId()">Details</a>
-                        <hr>
-                        <a class="btn btn-secondary" href="/books/@book.GetId()">Update</a>
-                        <hr>
+                        <hr class="w-25">
+                        <a class="btn btn-secondary" href="/books/@book.GetId()/update">Update</a>
+                        <hr class="w-25">
                         <a class="btn btn-secondary" href="/books/delete">Delete</a>
                       </td>
                       <td>

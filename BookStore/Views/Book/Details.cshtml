@@ -2,19 +2,36 @@
 Layout = "_Layout";
 }
 <div class="container-fluid">
-  <h2 class="display-4">Details</h2>
-  @if(Model.Count != 0)
+  <h2 class="display-4">Book Details</h2>
+  <hr>
+  @if(Model["bookCustomers"].Count != 0)
   {
-    @foreach (var book in Model)
+    @foreach (var customer in Model["bookCustomers"])
     {
-      <li>
-        <h4>@book.GetImage()</h4>
-        <h4>@book.GetName()</h4>
-      </li>
+      <h4>Customers who've bought @Model["selectedBook"].GetName()</h4>
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col"><strong>Customer ID</strong></th>
+              <th scope="col">Name</th>
+              <th scope="col"><strong>Address</strong></th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">
+                <a class="btn btn-secondary" href="/customers/@customer.GetId()">@customer.GetId()</a>
+                <a class="btn btn-secondary" href="/books/delete">Delete</a>
+              </th>
+              <td>@customer.GetName()</td>
+              <td>@customer.GetAddress()</td>
+          </tbody>
+        </table>
     }
   }
   else
   {
-    <h5>This customer hasn't purchased any books.</h5>
+    <h5>No customers have purchased this book.</h5>
   }
 </div>

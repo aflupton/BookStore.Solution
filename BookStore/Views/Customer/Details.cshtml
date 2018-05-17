@@ -2,35 +2,49 @@
 Layout = "_Layout";
 }
 <div class="container-fluid">
-  <h2 class="display-4">@Model["selectedCustomer"].GetName()
-
-  <h4 class="display-5">Books bought by @Model["selectedCustomer"].GetName()</h4>
-
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col"><strong>Customer ID</strong></th>
-        <th scope="col"><strong>Name</strong></th>
-        <th scope="col"><strong>Address</strong></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-      </tr>
-    </tbody>
-  </table>
-  @if (Model["allBooks"].Count == 0)
+  <h2 class="display-4">Customer Details</h2>
+  <hr>
+  @if (Model["customerBooks"].Count == 0)
   {
     <h5>This customer hasn't purchased any books</h5>
+    <a class="btn btn-secondary" href="/customers">See all customers</a>
   }
   else
   {
     @foreach (var book in Model["customerBooks"])
     {
-
-    <h4>@book.GetImage()</h4>
-    <h4>@book.GetName()</h4>
+      <h4>Books bought by: @Model["selectedCustomer"].GetName()</h4>
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col"><strong>Book ID</strong></th>
+              <th scope="col">Thumbnail</th>
+              <th scope="col"><strong>Author</strong></th>
+              <th scope="col"><strong>Title</strong></th>
+              <th scope="col"><strong>ISBN</strong></th>
+              <th scope="col"><strong>Publisher</strong></th>
+              <th scope="col"><strong>Price</strong></th>
+              <th scope="col"><strong>Quantity</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">
+                <a class="btn btn-secondary" href="/books/@book.GetId()">@book.GetId()</a>
+                <a class="btn btn-secondary" href="/books/delete">Delete</a>
+              </th>
+              <td><img class="img img-fluid float-left" src="@book.GetImage()" alt="thumb"></td>
+              <td>@book.GetAuthor()</td>
+              <td>@book.GetName()</td>
+              <td>@book.GetIsbn()</td>
+              <td>@book.GetPublisher()</td>
+              <td>@book.GetPrice()</td>
+              <td>@book.GetQuantity()</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     }
   }
-
 </div>

@@ -193,7 +193,6 @@ namespace BookStore.Models
             JOIN books_customers ON (customers.id = books_customers.customers_id)
             JOIN books ON (books_customers.books_id = books.id)
             WHERE customers.id = @CustomerId;";
-        Console.Write("Customer Class SQL:" + cmd.CommandText);
         MySqlParameter categoryIdParameter = new MySqlParameter();
         categoryIdParameter.ParameterName = "@CustomerId";
         categoryIdParameter.Value = _id;

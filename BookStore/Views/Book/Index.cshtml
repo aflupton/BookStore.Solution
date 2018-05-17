@@ -14,15 +14,14 @@ Layout = "_Layout";
           <hr>
           <h5><a class="btn btn-secondary" href="/customers/new">Enter a new customer</a></h5>
           <hr>
-          <h5><a class="btn btn-secondary" href="/books/deleteall">Delete all books</a></h5>
-          <hr>
+
         </div>
         <ul class="list-group">
           @foreach(var book in Model["Books"])
           {
             <li class="list-group-item">
-              <div class="overflow-x:auto;">
-                <table class="table">
+              <div class="table-responsive-md">
+                <table class="table text-center">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Book ID</th>
@@ -50,7 +49,6 @@ Layout = "_Layout";
                         <form class="form" action="~/customers/checkout" method="post">
                           <div class="form-group">
                             <input type="hidden" class="form-control"name= "bookid" value="@book.GetId()"  readonly></input>
-                            <hr>
                             <label for="appendName">Select your name:</label>
                             <select class="form-control" name="appendName">
                               @foreach(var customer in Model["Customers"])

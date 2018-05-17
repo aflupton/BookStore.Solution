@@ -40,6 +40,15 @@ namespace Bookstore.Controllers
         model.Add("bookCustomers", bookCustomers);
         return View("Details", model);
       }
+      [HttpGet("/books/{id}/delete")]
+      public ActionResult DeleteBook(int id)
+      {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Book selectedBook = Book.Find(id);
+        selectedBook.DeleteBook();
+        return View("Index", model);
+      }
+
       [HttpPost("/search")]
       public ActionResult Search()
       {

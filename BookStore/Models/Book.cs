@@ -419,7 +419,6 @@ namespace BookStore.Models
 
      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
      cmd.CommandText = @"SELECT * FROM books WHERE bookName LIKE '%" + book + "%' OR isbn LIKE '" + book + "';";
-     Console.WriteLine(cmd.CommandText);
      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
      while(rdr.Read())
      {

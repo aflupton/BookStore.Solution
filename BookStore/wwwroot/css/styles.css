@@ -9,6 +9,9 @@ h1 {
   display: block;
   float: right;
 }
+.links {
+  background-color: white;
+}
 .jumbotron {
   border-radius: 10px;
 }

@@ -88,7 +88,7 @@ namespace BookStore.Models
       }
       return allCustomers;
     }
-    public void Update(string newName, string newAddress)
+    public void UpdateCustomer(string newName, string newAddress)
     {
         MySqlConnection conn = DB.Connection();
         conn.Open();
@@ -101,17 +101,19 @@ namespace BookStore.Models
         searchId.Value = _id;
         cmd.Parameters.Add(searchId);
 
-        MySqlParameter name = new MySqlParameter();
-        name.ParameterName = "@NewName";
-        name.Value = newName;
-        cmd.Parameters.Add(name);
+        MySqlParameter customer_name = new MySqlParameter();
+        customer_name.ParameterName = "@NewName";
+        customer_name.Value = newName;
+        cmd.Parameters.Add(customer_name);
 
-        MySqlParameter address = new MySqlParameter();
-        address.ParameterName = "@NewAddress";
-        address.Value = newName;
-        cmd.Parameters.Add(address);
+        MySqlParameter customer_address = new MySqlParameter();
+        customer_address.ParameterName = "@NewAddress";
+        customer_address.Value = newAddress;
+        cmd.Parameters.Add(customer_address);
 
         cmd.ExecuteNonQuery();
+        _name = newName;
+        _address = newAddress;
         conn.Close();
         if (conn != null)
         {
@@ -151,26 +153,26 @@ namespace BookStore.Models
 
         return newCustomer;
     }
-    // public void DeleteCustomer()
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = @"DELETE FROM customer WHERE id = @CustomerId
-    //   DELETE FROM books_customers WHERE customers_id = @CustomerId;";
-    //
-    //   MySqlParameter id = new MySqlParameter();
-    //   id.ParameterName = "@CustomerId";
-    //   id.Value = this.GetId();
-    //   cmd.Parameters.Add(id);
-    //
-    //   cmd.ExecuteNonQuery();
-    //   conn.Close();
-    //   if(conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    // }
+    public void DeleteCustomer()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM customer WHERE id = @CustomerId
+      DELETE FROM books_customers WHERE customers_id = @CustomerId;";
+
+      MySqlParameter id = new MySqlParameter();
+      id.ParameterName = "@CustomerId";
+      id.Value = this.GetId();
+      cmd.Parameters.Add(id);
+
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if(conn != null)
+      {
+        conn.Dispose();
+      }
+    }
     public static void DeleteAll()
     {
        MySqlConnection conn = DB.Connection();
@@ -206,7 +208,6 @@ namespace BookStore.Models
           string image = rdr.GetString(1);
           string author = rdr.GetString(2);
           string bookName = rdr.GetString(3);
-          // Console.WriteLine(bookName);
           string isbn = rdr.GetString(4);
           string publisher = rdr.GetString(5);
           double price = rdr.GetDouble(6);

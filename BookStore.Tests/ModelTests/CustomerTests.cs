@@ -75,24 +75,24 @@ namespace BookStore.Tests
       //Arrange
       Customer testCustomer = new Customer("1","1");
       testCustomer.Save();
-    
+
       Book testBook = new Book ("img", "Benedict Anderson", "Imagined Communities", "2342349430", "Verso", 21, 1);
       testBook.Save();
       // Act
       testBook.AddCustomerToBook(testCustomer);
-    
+
       List<Book> result = testCustomer.GetBooks();
-      Console.WriteLine(result[0].GetId());
-      Console.WriteLine(result[0].GetName());
-      Console.WriteLine(result[0].GetImage());
-      Console.WriteLine(result[0].GetPrice());
-      Console.WriteLine(result[0].GetQuantity());
-      Console.WriteLine(result[0].GetAuthor());
-      Console.WriteLine(result[0].GetIsbn());
-      Console.WriteLine(result[0].GetPublisher());
+      // Console.WriteLine(result[0].GetId());
+      // Console.WriteLine(result[0].GetName());
+      // Console.WriteLine(result[0].GetImage());
+      // Console.WriteLine(result[0].GetPrice());
+      // Console.WriteLine(result[0].GetQuantity());
+      // Console.WriteLine(result[0].GetAuthor());
+      // Console.WriteLine(result[0].GetIsbn());
+      // Console.WriteLine(result[0].GetPublisher());
 
       List<Book> testList = new List<Book>{testBook};
-    
+
       //Assert
       CollectionAssert.AreEqual(testList, result);
     }

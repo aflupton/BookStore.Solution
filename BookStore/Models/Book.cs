@@ -312,7 +312,7 @@ namespace BookStore.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"UPDATE books SET image = @Image, author = @Author, bookName = @BookName, isbn = @Isbn, publisher = @Publisher, price = @Price, quantity = @Quantity, WHERE id =@BookId;";
+      cmd.CommandText = @"UPDATE books SET image = @Image, author = @Author, bookName = @BookName, isbn = @Isbn, publisher = @Publisher, price = @Price, quantity = @Quantity WHERE id = @searchId;";
 
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
@@ -346,15 +346,13 @@ namespace BookStore.Models
 
       MySqlParameter price = new MySqlParameter();
       price.ParameterName = "@Price";
-      price.Value = _id;
+      price.Value = bookPrice;
       cmd.Parameters.Add(price);
 
       MySqlParameter bookQuant = new MySqlParameter();
       bookQuant.ParameterName = "@Quantity";
       bookQuant.Value = quantity;
       cmd.Parameters.Add(bookQuant);
-
-
 
       cmd.ExecuteNonQuery();
       _image = bookImage;
@@ -458,7 +456,7 @@ namespace BookStore.Models
       searchId.ParameterName = "@searchId";
       searchId.Value = _id;
       cmd.Parameters.Add(searchId);
-
+      Console.WriteLine("Id from search: " + _id);
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
 
       while(rdr.Read())
@@ -471,27 +469,30 @@ namespace BookStore.Models
       {
         Total_Quantity -= 1;
       }
-      Console.WriteLine("Book quantity: " + Total_Quantity);
+
 
       // update the database
       conn.Close();
       conn.Open();
+      Console.WriteLine("Book quantity : " + Total_Quantity);
+      Console.WriteLine("Total Quantity, After the connection is open: " + Total_Quantity);
       MySqlCommand command = conn.CreateCommand() as MySqlCommand;
-      command.CommandText = @"INSERT INTO books (quantity) VALUES (@ItemQuantity) WHERE id = @givenId;";
+      command.CommandText = @"UPDATE books SET quantity = @ItemQuantity WHERE id = @givenId;";
 
 
       MySqlParameter givenId = new MySqlParameter();
       givenId.ParameterName = "@givenId";
       givenId.Value = _id;
-      cmd.Parameters.Add(givenId);
+      command.Parameters.Add(givenId);
 
       MySqlParameter bookQuant = new MySqlParameter();
       bookQuant.ParameterName = "@ItemQuantity";
       bookQuant.Value = Total_Quantity;
-      cmd.Parameters.Add(bookQuant);
+      command.Parameters.Add(bookQuant);
 
-      cmd.ExecuteNonQuery();
+      command.ExecuteNonQuery();
       _quantity = Total_Quantity;
+      Console.WriteLine("_quantity = " + _quantity);
 
       if(conn != null)
       {

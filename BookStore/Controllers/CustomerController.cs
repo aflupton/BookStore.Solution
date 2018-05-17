@@ -41,26 +41,48 @@ namespace Bookstore.Controllers
     [HttpGet("/customers/{id}/update")]
     public ActionResult UpdateForm(int id)
     {
-      Customer thisCustomer = Customer.Find(id);
-      return View("UpdateCustomer", thisCustomer);
+      Customer selectedCustomer = Customer.Find(id);
+      return View("CustomerUpdate", selectedCustomer);
     }
 
-    // [HttpPost("/customers/{id}/updated")]
-    // public ActionResult UpdatedCustomer(int id)
-    // {
-    //   Customer foundCustomer = Customer.Find(id);
-    //   Customer updatedCustomer = new Customer(Request.Form["customer_name"], Request.Form["customer_address"]);
-    //   updatedCustomer.Update();
-    //   return RedirectToAction("Index", updatedCustomer);
-    // }
+    [HttpPost("/customers/{id}/update")]
+    public ActionResult PostUpdate(int id)
+    {
+      Customer selectedCustomer = Customer.Find(id);
+      selectedCustomer.UpdateCustomer(Request.Form["customer_name"], Request.Form["customer_address"]);
+      return RedirectToAction("Index");
+    }
 
+    // [HttpGet("/books/{id}/update")]
+    // public ActionResult UpdateBook(int id)
+    // {
+    //   Book selectedBook = Book.Find(id);
+    //   return View("BookUpdate", selectedBook);
+    //   // return RedirectToAction("Index")
+    // }
+    // [HttpPost("/books/{id}/update")]
+    // public ActionResult PostUpdate(int id)
+    // {
+    //   Book selectedBook = Book.Find(id);
+    //   selectedBook.UpdateBook(Request.Form["book_image"], Request.Form["book_author"], Request.Form["book_title"], Request.Form["book_isbn"], Request.Form["book_publisher"], Double.Parse(Request.Form["book_price"]), int.Parse(Request.Form["quantity"]));
+    //   return RedirectToAction("Index");
+    //
     [HttpPost("/customers/checkout")]
     public ActionResult Checkout()
     {
       Book newPurchase = Book.Find(int.Parse(Request.Form["bookid"]));
       Customer purchasingCustomer = Customer.Find(int.Parse(Request.Form["appendName"]));
       newPurchase.AddCustomerToBook(purchasingCustomer);
+      newPurchase.UpdateQuantity();
       return RedirectToAction("Index");
+    }
+
+    [HttpGet("/customers/{id}/delete")]
+    public ActionResult DeleteCustomer(int id)
+    {
+      this.DeleteCustomer(id);
+      Console.WriteLine();
+      return RedirectToAction("Details", "Index", new { id = id });
     }
 
     [HttpGet("/customers/deleteall")]

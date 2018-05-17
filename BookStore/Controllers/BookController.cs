@@ -58,7 +58,7 @@ namespace Bookstore.Controllers
         return RedirectToAction("Index");
       }
       [HttpGet("/books/{id}/update")]
-      public ActionResult UpdateBook(int id)
+      public ActionResult UpdateForm(int id)
       {
         Book selectedBook = Book.Find(id);
         return View("BookUpdate", selectedBook);

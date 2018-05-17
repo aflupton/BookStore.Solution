@@ -24,7 +24,7 @@ Layout = "_Layout";
                 <table class="table text-center">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col">Book ID</th>
+                      <th scope="col"><strong>Book ID</strong></th>
                       <th scope="col"><strong>Thumbnail</strong></th>
                       <th scope="col"><strong>Author</strong></th>
                       <th scope="col"><strong>Title</strong></th>
@@ -32,12 +32,13 @@ Layout = "_Layout";
                       <th scope="col"><strong>Publisher</strong></th>
                       <th scope="col"><strong>Price</strong></th>
                       <th scope="col"><strong>Quantity</strong></th>
-                      <th scope="col"><strong>Action</strong></th>
+                      <th scope="col"><strong>Actions</strong></th>
+                      <th scope="col"><strong>Buy</strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"><a class="btn btn-secondary" href="/books/@book.GetId()">@book.GetId()</a></th>
+                      <th>@book.GetId()</th>
                       <td><img class="img img-fluid float-left" src="@book.GetImage()" alt="thumb"></td>
                       <td>@book.GetAuthor()</td>
                       <td>@book.GetName()</td>
@@ -45,6 +46,13 @@ Layout = "_Layout";
                       <td>@book.GetPublisher()</td>
                       <td>@book.GetPrice()</td>
                       <td>@book.GetQuantity()</td>
+                      <td scope="row">
+                        <a class="btn btn-secondary" href="/books/@book.GetId()">Details</a>
+                        <hr>
+                        <a class="btn btn-secondary" href="/books/@book.GetId()">Update</a>
+                        <hr>
+                        <a class="btn btn-secondary" href="/books/delete">Delete</a>
+                      </td>
                       <td>
                         <form class="form" action="~/customers/checkout" method="post">
                           <div class="form-group">

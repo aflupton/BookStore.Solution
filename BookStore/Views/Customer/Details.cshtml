@@ -6,7 +6,7 @@ Layout = "_Layout";
   <hr>
   @if (Model["customerBooks"].Count == 0)
   {
-    <h5>This customer hasn't purchased any books</h5>
+    <h5>@Model["selectedCustomer"].GetName() hasn't purchased any books</h5>
     <a class="btn btn-secondary" href="/customers">See all customers</a>
   }
   else

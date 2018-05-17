@@ -51,5 +51,6 @@ namespace Bookstore.Controllers
     {
       Customer.DeleteAll();
       return View("Index");
+    }
   }
 }

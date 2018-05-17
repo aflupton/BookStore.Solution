@@ -25,7 +25,7 @@ namespace Bookstore.Controllers
       newCustomer.Save();
       return RedirectToAction("Index");
     }
-    [HttpGet("/customers/{id}")]
+    [HttpGet("/customers/{id}/details")]
     public ActionResult Details(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object> ();
@@ -42,15 +42,15 @@ namespace Bookstore.Controllers
     public ActionResult UpdateCustomer(int id)
     {
       Customer selectedCustomer = Customer.Find(id);
-      return View("CustomerUpdate", selectedCustomer);
+      return View("CustomerUpdate",selectedCustomer);
     }
 
-    [HttpPost("/customers/{id}/update")]
+    [HttpPost("/customers/{id}/updated")]
     public ActionResult PostUpdate(int id)
     {
-      Customer selectedCustomer = Customer.Find(id);
-      selectedCustomer.UpdateCustomer(Request.Form["customer_name"], Request.Form["customer_address"]);
-      return RedirectToAction("Index");
+      Customer foundCustomer = Customer.Find(id);
+      foundCustomer.UpdateCustomer(Request.Form["customer_name"], Request.Form["customer_address"]);
+      return RedirectToAction("Index", foundCustomer);
     }
 
 

@@ -7,6 +7,7 @@ Layout = "_Layout";
   @if (Model["customerBooks"].Count == 0)
   {
     <!-- <h5>@Model["selectedCustomer"].GetName() hasn't purchased any books</h5> -->
+    <h5>You haven't selected any books.</h5>
     <h5>Please select another customer or select a book to purchase.</h5>
     <a class="btn btn-secondary" href="/customers">See all customers</a>
     <hr class="w-25">
@@ -30,7 +31,6 @@ Layout = "_Layout";
               <th scope="col"><strong>ISBN</strong></th>
               <th scope="col"><strong>Publisher</strong></th>
               <th scope="col"><strong>Price</strong></th>
-              <th scope="col"><strong>Quantity</strong></th>
               <th scope="col"><strong>Actions</strong></th>
             </tr>
           </thead>
@@ -43,7 +43,6 @@ Layout = "_Layout";
               <td>@book.GetIsbn()</td>
               <td>@book.GetPublisher()</td>
               <td>@book.GetPrice()</td>
-              <td>@book.GetQuantity()</td>
               <td>
                 <a class="btn btn-secondary" href="/books/@book.GetId()">Details</a>
                 <hr class="w-25">

@@ -48,6 +48,19 @@ namespace Bookstore.Controllers
         List<Book> searchBook = Book.SearchBooks(Request.Form["searchdate"]);
         return RedirectToAction("Index");
       }
-
+      [HttpGet("/books/{id}/update")]
+      public ActionResult UpdateBook(int id)
+      {
+        Book selectedBook = Book.Find(id);
+        return View("UpdateBook", selectedBook);
+        // return RedirectToAction("Index")
+      }
+      [HttpPost("/books/{id}/update")]
+      public ActionResult PostUpdate(int id)
+      {
+        Book selectedBook = Book.Find(id);
+        selectedBook.UpdateBook(Request.Form["book_image"], Request.Form["book_author"], Request.Form["book_title"], Request.Form["book_isbn"], Request.Form["book_publisher"], Double.Parse(Request.Form["book_price"]), int.Parse(Request.Form["quantity"]);
+        return RedirectToAction("Index")
+      }
   }
 }

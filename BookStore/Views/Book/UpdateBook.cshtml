@@ -1,0 +1,38 @@
+@{
+Layout = "_Layout";
+}
+<div class="container-fluid">
+  <h2 class="display-4">Update book</h2>
+  <form class="col-md-6" action="/books/@Model.GetId()/update" method="post">
+    <div class="form-group">
+      <label for="book_image">Enter Image:</label>
+      <input name="book_image" type="text" class="form-control" id="bookImage"  value ="@Model.GetImage()">
+    </div>
+    <div class="form-group">
+      <label for="book_author">Enter Author:</label>
+      <input name="book_author" type="text" class="form-control" id="bookAuthor" value ="@Model.GetAuthor()">
+    </div>
+    <div class="form-group">
+      <label for="book_title">Enter Title:</label>
+      <input name="book_title" type="text" class="form-control" id="bookTitle" value ="@Model.GetName()">
+    </div>
+    <div class="form-group">
+      <label for="book_isbn">Enter ISBN:</label>
+      <input name="book_isbn" type="text" class="form-control" id="bookIsbn" value ="@Model.GetIsbn()">
+    </div>
+    <div class="form-group">
+      <label for="book_publisher">Enter Publisher:</label>
+      <input name="book_publisher" type="text" class="form-control" id="bookPublisher" value = "@Model.GetPublisher()">
+    </div>
+    <div class="form-group">
+      <label for="book_price">Enter Price:</label>
+      <input name="book_price" type="text" class="form-control" id="bookPrice" value = "@GetPrice()">
+    </div>
+    <div class="form-group">
+      <label for="quantity">Enter Quantity:</label>
+      <input name="quantity" type="text" class="form-control" id="bookQuant" value = "@GetQuantity()">
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+</div>

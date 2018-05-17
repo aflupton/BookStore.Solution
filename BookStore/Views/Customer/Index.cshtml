@@ -4,7 +4,6 @@ Layout = "_Layout";
 <div class="container-fluid">
   <h2 class="display-4">Customers</h2>
   <hr>
-
   <div class="row">
     <div class="col-md-6">
       @if(Model.Count != 0)
@@ -21,24 +20,30 @@ Layout = "_Layout";
           @foreach(var customer in Model)
           {
             <li class="list-group-item">
-              <table class="table">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Customer ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th><a class="btn btn-secondary" href="/customers/@customer.GetId()">@customer.GetId()</a></th>
-                    <td>@customer.GetName()</td>
-                    <td>@customer.GetAddress()</td>
-                    <td><a class="btn btn-secondary"href="/customers/delete">Delete</a></td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="table-responsive">
+                <table class="table text-center">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Customer ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>@customer.GetId()</th>
+                      <td>@customer.GetName()</td>
+                      <td>@customer.GetAddress()</td>
+                      <td>
+                        <a class="btn btn-secondary" href="/customers/@customer.GetId()/update">Update</a>
+                        <a class="btn btn-secondary" href="/customers/delete">Delete</a>
+                        <a class="btn btn-secondary" href="/customers/@customer.GetId()">Details</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </li>
           }
         </ul>
@@ -50,5 +55,4 @@ Layout = "_Layout";
       }
     </div>
   </div>
-
 </div>

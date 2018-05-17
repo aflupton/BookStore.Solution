@@ -46,6 +46,12 @@ namespace Bookstore.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpPost("/customers/{id}/delete")]
+    public ActionResult DeleteCustomer(int id)
+    {
+    Customer.DeleteCustomer(id);
+    return RedirectToAction("Details", "Index", new { id = id });
+
     [HttpGet("/customers/deleteall")]
     public ActionResult DeleteAll()
     {

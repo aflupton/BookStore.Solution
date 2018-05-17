@@ -312,7 +312,7 @@ namespace BookStore.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"UPDATE books SET image = @Image, author = @Author, bookName = @BookName, isbn = @Isbn, publisher = @Publisher, price = @Price, quantity = @Quantity;";
+      cmd.CommandText = @"UPDATE books SET image = @Image, author = @Author, bookName = @BookName, isbn = @Isbn, publisher = @Publisher, price = @Price, quantity = @Quantity, WHERE id =@BookId;";
 
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
@@ -419,7 +419,6 @@ namespace BookStore.Models
 
      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
      cmd.CommandText = @"SELECT * FROM books WHERE bookName LIKE '%" + book + "%' OR isbn LIKE '" + book + "';";
-     Console.WriteLine(cmd.CommandText);
      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
      while(rdr.Read())
      {

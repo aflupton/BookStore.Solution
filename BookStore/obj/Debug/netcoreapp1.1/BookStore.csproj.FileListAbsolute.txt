@@ -12,3 +12,5 @@
 /Users/Guest/BookStore.Solution/BookStore/obj/Debug/netcoreapp1.1/BookStore.AssemblyInfo.cs
 /Users/Guest/BookStore.Solution/BookStore/obj/Debug/netcoreapp1.1/BookStore.dll
 /Users/Guest/BookStore.Solution/BookStore/obj/Debug/netcoreapp1.1/BookStore.pdb
+/Users/Guest/BookStore.Solution/BookStore/bin/Debug/netcoreapp1.1/BookStore.dll
+/Users/Guest/BookStore.Solution/BookStore/bin/Debug/netcoreapp1.1/BookStore.pdb

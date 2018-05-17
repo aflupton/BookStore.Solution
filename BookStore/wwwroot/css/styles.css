@@ -2,7 +2,33 @@ body {
   padding: 20px;
   padding-top: 50px;
 }
-
-footer {
-  
+h1 {
+  font-size: 25pt;
+}
+#links {
+  display: block;
+  float: right;
+}
+.jumbotron {
+  border-radius: 10px;
+}
+#main-header {
+  color: white;
+  font-weight: 300;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: grey;
+  text-align: center;
+}
+.img {
+  max-width: 150px;
+  max-height: 150px;
+}
+.card {
+  max-width: 500px;
+  max-height: 500px;
 }

@@ -16,14 +16,16 @@ namespace BookStore.Tests
     public void Dispose()
     {
       Book.DeleteAll();
+      Customer.DeleteAll();
+
     }
     //test whether two identical books are recognized as identical instances
     [TestMethod]
     public void Saves_TwoBooks_AsSame()
     {
       //Arrange
-      Book firstBook = new Book ("The Enormous Room", "e.e. cummings", "3596215002", 9.99, "Penguin", "img");
-      Book secondBook = new Book ("The Enormous Room", "e.e. cummings", "3596215002", 9.99, "Penguin", "jpg");
+      Book firstBook = new Book ("img", "e.e. cummings", "The Enormous Room", "3596215002", "Penguin", 9.99, 1);
+      Book secondBook = new Book ("img", "e.e. cummings", "The Enormous Room", "3596215002", "Penguin", 9.99, 1);
       //Act
       firstBook.Save();
       secondBook.Save();
@@ -35,7 +37,7 @@ namespace BookStore.Tests
     public void Save_InstanceToDatabase_BooksTable()
     {
       //Arrange
-      Book testBook = new Book ("Moby Dick", "Herman Melville", "2342342322", 12.99, "Penguin", "img");
+      Book testBook = new Book ("img", "e.e. cummings", "The Enormous Room", "3596215002", "Penguin", 9.99, 1);
       testBook.Save();
       //Act
       List<Book> result = Book.GetAll();
@@ -48,7 +50,7 @@ namespace BookStore.Tests
     public void AddCustomer_ToBookObject()
     {
       //Arrange
-      Book testBook = new Book("The Kindly Ones", "Jonathan Littell", "HarperCollins" "234093922", 25, "img");
+      Book testBook = new Book ("img", "e.e. cummings", "The Enormous Room", "3596215002", "Penguin", 9.99, 1);
       testBook.Save();
 
       Customer testCustomer = new Customer ("Austin", "600 1st Ave, Seattle, Wa");
@@ -66,7 +68,7 @@ namespace BookStore.Tests
     public void Find_AllBookObjects_InDatabase()
     {
       //Arrange
-      Book testBook = new Book ("Exit West", "Mohsin Hamid", "2349234332", 15.99, "Riverhead Books", "img");
+      Book testBook = new Book ("img", "e.e. cummings", "The Enormous Room", "3596215002", "Penguin", 9.99, 1);
       testBook.Save();
       //Act
       Book foundBook = Book.Find(testBook.GetId());
@@ -78,33 +80,53 @@ namespace BookStore.Tests
     public void Update_BookObject_BooksTable()
     {
       //Arrange
-      Book testBook = new Book ("Imagined Communities", "Benedict Anderson", "2342349430", 21, "Verso", "img");
+      Book testBook = new Book ("img", "Benedict Anderson", "Imagined Communities", "2342349430", "Verso", 21, 1);
       testBook.Save();
-      string updatedName = "A Life Beyond Boundaries";
-      string updatedAuthor = "Benedict Anderson";
-      string updatedIsbn = "3459854822";
-      double updatedPrice = 25;
       string updatedImage = "image";
+      string updatedAuthor = "Benedict Anderson";
+      string updatedName = "A Life Beyond Boundaries";
+      string updatedIsbn = "3459854822";
+      string updatedPublisher = "HarperCollins";
+      double updatedPrice = 25;
+      int updatedQuantity = 2;
+
       //Act
-      testBook.UpdateBook(updatedName, updatedAuthor, updatedIsbn, updatedPrice, updatedImage);
+      testBook.UpdateBook(updatedImage, updatedAuthor, updatedName, updatedIsbn, updatedPublisher, updatedPrice, updatedQuantity);
       string result = Book.Find(testBook.GetId()).GetName();
       //Assert
       Assert.AreEqual(updatedName, result);
     }
     //tests whether Delete method works on single instances of Book class
+    // [TestMethod]
+    // public void Delete_SingleBookObject_FromDatabase()
+    // {
+    //   //Arrange
+    //   Book testBook = new Book ("img", "Benedict Anderson", "Imagined Communities", "2342349430", "Verso", 21, 1);
+    //   testBook.Save();
+    //   //Act
+    //   Console.WriteLine("Name: " + testBook.GetName() + "Author: " + testBook.GetAuthor());
+    //   testBook.DeleteBook();
+    //   Book deletedBook = Book.Find(testBook.GetId());
+    //   //Assert
+    //   Console.WriteLine("Name: " + deletedBook.GetName());
+    //   Assert.AreEqual("", deletedBook.GetName());
+    // }
     [TestMethod]
-    public void Delete_SingleBookObject_FromDatabase()
+    public void TestSearchBook()
     {
-      //Arrange
-      Book testBook = new Book ("Hhhh", "Laurent Binet", "9781452650", 20.95, "Picador", "img");
-      testBook.Save();
-      //Act
-      Console.WriteLine("Name: " + testBook.GetName() + "Author: " + testBook.GetAuthor());
-      testBook.DeleteBook();
-      Book deletedBook = Book.Find(testBook.GetId());
-      //Assert
-      Console.WriteLine("Name: " + deletedBook.GetName());
-      Assert.AreEqual("", deletedBook.GetName());
+      Book newBook = new Book("img", "My Founder", "This is a test", "2342349430", "Version", 21, 1);
+      newBook.Save();
+      List<Book> MyBooks = Book.SearchBooks("This is a test");
+      Assert.AreEqual("This is a test",MyBooks[0].GetName());
+    }
+
+    [TestMethod]
+    public void TestSearchISBN()
+    {
+      Book newBook = new Book("img", "My Founder", "This is a test", "21231233", "Version", 21, 1);
+      newBook.Save();
+      List<Book> MyBooks = Book.SearchBooks("21231233");
+      Assert.AreEqual("21231233",MyBooks[0].GetIsbn());
     }
   }
 }

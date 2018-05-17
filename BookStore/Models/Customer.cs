@@ -158,12 +158,12 @@ namespace BookStore.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM customer WHERE id = @CustomerId
+      cmd.CommandText = @"DELETE FROM customers WHERE id = @CustomerId;
       DELETE FROM books_customers WHERE customers_id = @CustomerId;";
 
       MySqlParameter id = new MySqlParameter();
       id.ParameterName = "@CustomerId";
-      id.Value = this.GetId();
+      id.Value = _id;
       cmd.Parameters.Add(id);
 
       cmd.ExecuteNonQuery();

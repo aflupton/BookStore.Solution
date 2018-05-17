@@ -9656,16 +9656,16 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/BookStore.Solution/BookStore/BookStore.csproj",
+      "projectUniqueName": "/Users/Guest/Desktop/BookStore.Solution/BookStore/BookStore.csproj",
       "projectName": "BookStore",
-      "projectPath": "/Users/Guest/BookStore.Solution/BookStore/BookStore.csproj",
-      "outputPath": "/Users/Guest/BookStore.Solution/BookStore/obj/",
+      "projectPath": "/Users/Guest/Desktop/BookStore.Solution/BookStore/BookStore.csproj",
+      "outputPath": "/Users/Guest/Desktop/BookStore.Solution/BookStore/obj/",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
       "files": {
-        "lib/netcoreapp1.1/BookStore.dll": "/Users/Guest/BookStore.Solution/BookStore/bin/placeholder/netcoreapp1.1/BookStore.dll"
+        "lib/netcoreapp1.1/BookStore.dll": "/Users/Guest/Desktop/BookStore.Solution/BookStore/bin/placeholder/netcoreapp1.1/BookStore.dll"
       },
       "frameworks": {
         "netcoreapp1.1": {

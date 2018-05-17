@@ -26,11 +26,11 @@ Layout = "_Layout";
     </div>
     <div class="form-group">
       <label for="book_price">Enter Price:</label>
-      <input name="book_price" type="text" class="form-control" id="bookPrice" value = "@GetPrice()">
+      <input name="book_price" type="text" class="form-control" id="bookPrice" value = "@Model.GetPrice()">
     </div>
     <div class="form-group">
       <label for="quantity">Enter Quantity:</label>
-      <input name="quantity" type="text" class="form-control" id="bookQuant" value = "@GetQuantity()">
+      <input name="quantity" type="text" class="form-control" id="bookQuant" value = "@Model.GetQuantity()">
     </div>
 
     <button type="submit" class="btn btn-secondary">Submit</button>

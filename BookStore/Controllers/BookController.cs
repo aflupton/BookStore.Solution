@@ -59,8 +59,8 @@ namespace Bookstore.Controllers
       public ActionResult PostUpdate(int id)
       {
         Book selectedBook = Book.Find(id);
-        selectedBook.UpdateBook(Request.Form["book_image"], Request.Form["book_author"], Request.Form["book_title"], Request.Form["book_isbn"], Request.Form["book_publisher"], Double.Parse(Request.Form["book_price"]), int.Parse(Request.Form["quantity"]);
-        return RedirectToAction("Index")
+        selectedBook.UpdateBook(Request.Form["book_image"], Request.Form["book_author"], Request.Form["book_title"], Request.Form["book_isbn"], Request.Form["book_publisher"], Double.Parse(Request.Form["book_price"]), int.Parse(Request.Form["quantity"]));
+        return RedirectToAction("Index");
       }
   }
 }

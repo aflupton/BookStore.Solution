@@ -26,14 +26,12 @@ Layout = "_Layout";
               <th scope="col"><strong>Publisher</strong></th>
               <th scope="col"><strong>Price</strong></th>
               <th scope="col"><strong>Quantity</strong></th>
+              <th scope="col"><strong>Actions</strong></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">
-                <a class="btn btn-secondary" href="/books/@book.GetId()">@book.GetId()</a>
-                <a class="btn btn-secondary" href="/books/delete">Delete</a>
-              </th>
+              <th scope="row">@book.GetId()</th>
               <td><img class="img img-fluid float-left" src="@book.GetImage()" alt="thumb"></td>
               <td>@book.GetAuthor()</td>
               <td>@book.GetName()</td>
@@ -41,6 +39,13 @@ Layout = "_Layout";
               <td>@book.GetPublisher()</td>
               <td>@book.GetPrice()</td>
               <td>@book.GetQuantity()</td>
+              <td>
+                <a class="btn btn-secondary" href="/books/@book.GetId()">Details</a>
+                <hr>
+                <a class="btn btn-secondary" href="/books/@book.GetId()/update">Update</a>
+                <hr>
+                <a class="btn btn-secondary" href="/books/delete">Delete</a>
+              </td>
             </tr>
           </tbody>
         </table>

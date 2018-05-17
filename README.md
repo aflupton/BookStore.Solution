@@ -14,7 +14,7 @@ _An MVC app for a bookstore utilizing MySql database functionality. Group week p
   * _The program should allow book instances to be associated with customer instances, and vice versa._
 * _The program should allow the user to find and recall database entries as sequential lists._
 * _The program should allow the user to update existing customer and book instances in the database, as well as create new instances._
-* _The program should allow the user to delete single customer or book instances from the database, as well as delete each object class in its entirety._ 
+* _The program should allow the user to delete single customer or book instances from the database, as well as delete each object class in its entirety._
 
 
 ## Setup/Installation Requirements
@@ -39,7 +39,7 @@ _An MVC app for a bookstore utilizing MySql database functionality. Group week p
 
 ## Known Bugs
 
-_"~/Views/Book/Index.cshtml" is throwing an exception on page load._
+_None, currently._
 
 ## Support and contact details
 

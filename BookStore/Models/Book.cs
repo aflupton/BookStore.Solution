@@ -419,7 +419,7 @@ namespace BookStore.Models
 
      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
      cmd.CommandText = @"SELECT * FROM books WHERE bookName LIKE '%" + book + "%' OR isbn LIKE '" + book + "';";
-     Console.WriteLine(cmd.CommandText);
+     Console.WriteLine(cmd.CommandText); // Debug SQL Query
      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
      while(rdr.Read())
      {
@@ -442,5 +442,65 @@ namespace BookStore.Models
      }
      return MyBooks;
     }
+
+    public void UpdateQuantity()
+    {
+
+      int Total_Quantity = 0;
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+
+      // make query to the database for book quantity
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT quantity FROM books WHERE id = @searchId;";
+      Console.WriteLine("Get the book quantity: " + cmd.CommandText); // debug
+
+      MySqlParameter searchId = new MySqlParameter();
+      searchId.ParameterName = "@searchId";
+      searchId.Value = _id;
+      cmd.Parameters.Add(searchId);
+
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+
+      while(rdr.Read())
+      {
+        Total_Quantity = rdr.GetInt32(0);
+      }
+
+      // subtract the quantity by 1
+      if( Total_Quantity != 0)
+      {
+        Total_Quantity -= 1;
+      }
+      Console.WriteLine("Book quantity: " + Total_Quantity);
+
+      // update the database
+      conn.Close();
+      conn.Open();
+      MySqlCommand command = conn.CreateCommand() as MySqlCommand;
+      command.CommandText = @"INSERT INTO books (quantity) VALUES (@ItemQuantity) WHERE id = @givenId;";
+
+
+      MySqlParameter givenId = new MySqlParameter();
+      givenId.ParameterName = "@givenId";
+      givenId.Value = _id;
+      cmd.Parameters.Add(givenId);
+
+      MySqlParameter bookQuant = new MySqlParameter();
+      bookQuant.ParameterName = "@ItemQuantity";
+      bookQuant.Value = Total_Quantity;
+      cmd.Parameters.Add(bookQuant);
+
+      cmd.ExecuteNonQuery();
+      _quantity = Total_Quantity;
+
+      if(conn != null)
+      {
+        conn.Dispose();
+      }
+
+    }
+
+
   }
 }

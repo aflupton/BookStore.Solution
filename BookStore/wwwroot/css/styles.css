@@ -14,7 +14,6 @@ h1 {
 }
 #main-header {
   color: white;
-  font-weight: 300;
 }
 .footer {
   position: fixed;
@@ -31,4 +30,7 @@ h1 {
 .card {
   max-width: 500px;
   max-height: 500px;
+}
+.pic {
+  padding: 20px;
 }

@@ -128,5 +128,14 @@ namespace BookStore.Tests
       List<Book> MyBooks = Book.SearchBooks("21231233");
       Assert.AreEqual("21231233",MyBooks[0].GetIsbn());
     }
+
+    [TestMethod]
+    public void TestUpdateQuantity()
+    {
+      Book MyBook = new Book("img", "James Harrison", "IPython Notebooks", "21231233", "Version", 21, 10);
+      MyBook.Save();
+      MyBook.UpdateQuantity();
+      Assert.AreEqual(9,MyBook.GetQuantity());
+    }
   }
 }

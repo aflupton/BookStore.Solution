@@ -59,7 +59,7 @@ namespace Bookstore.Controllers
         List<Customer> newCustomer = Customer.GetAll();
         model.Add("Customers", newCustomer);
         model.Add("Books", searchBook);
-        return RedirectToAction("Index", model);
+        return View("Index", model);
       }
 
       [HttpGet("/books/{id}/update")]

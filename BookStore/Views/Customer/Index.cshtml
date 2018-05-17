@@ -5,7 +5,7 @@ Layout = "_Layout";
   <h2 class="display-4">Customers</h2>
   <hr>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-9">
       @if(Model.Count != 0)
       {
         <div class="float-right sticky-top col-md-2">
@@ -35,9 +35,11 @@ Layout = "_Layout";
                       <th>@customer.GetId()</th>
                       <td>@customer.GetName()</td>
                       <td>@customer.GetAddress()</td>
-                      <td>
+                      <td class="w-50 d-inline-block">
                         <a class="btn btn-secondary" href="/customers/@customer.GetId()/update">Update</a>
+                        <hr class="w-25">
                         <a class="btn btn-secondary" href="/customers/delete">Delete</a>
+                        <hr class="w-25">
                         <a class="btn btn-secondary" href="/customers/@customer.GetId()">Details</a>
                       </td>
                     </tr>

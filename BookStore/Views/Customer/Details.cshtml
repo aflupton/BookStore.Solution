@@ -6,14 +6,19 @@ Layout = "_Layout";
   <hr>
   @if (Model["customerBooks"].Count == 0)
   {
-    <h5>@Model["selectedCustomer"].GetName() hasn't purchased any books</h5>
+    <!-- <h5>@Model["selectedCustomer"].GetName() hasn't purchased any books</h5> -->
+    <h5>Please select another customer or select a book to purchase.</h5>
     <a class="btn btn-secondary" href="/customers">See all customers</a>
+    <hr class="w-25">
+    <a class="btn btn-secondary" href="/books">See all books</a>
+
   }
   else
   {
+    <h4>Books bought by: @Model["selectedCustomer"].GetName()</h4>
     @foreach (var book in Model["customerBooks"])
     {
-      <h4>Books bought by: @Model["selectedCustomer"].GetName()</h4>
+
       <div class="table-responsive">
         <table class="table">
           <thead class="thead-light">

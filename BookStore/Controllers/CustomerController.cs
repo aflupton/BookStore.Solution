@@ -37,6 +37,23 @@ namespace Bookstore.Controllers
       model.Add("allBooks", allBooks);
       return View("Details", model);
     }
+
+    [HttpGet("/customers/{id}/update")]
+    public ActionResult UpdateForm(int id)
+    {
+      Customer thisCustomer = Customer.Find(id);
+      return View("UpdateCustomer", thisCustomer);
+    }
+
+    // [HttpPost("/customers/{id}/updated")]
+    // public ActionResult UpdatedCustomer(int id)
+    // {
+    //   Customer foundCustomer = Customer.Find(id);
+    //   Customer updatedCustomer = new Customer(Request.Form["customer_name"], Request.Form["customer_address"]);
+    //   updatedCustomer.Update();
+    //   return RedirectToAction("Index", updatedCustomer);
+    // }
+
     [HttpPost("/customers/checkout")]
     public ActionResult Checkout()
     {
@@ -46,12 +63,6 @@ namespace Bookstore.Controllers
       return RedirectToAction("Index");
     }
 
-    // [HttpPost("/customers/{id}/delete")]
-    // public ActionResult DeleteCustomer(int id)
-    // {
-    // // Customer.DeleteCustomer(id);
-    // return RedirectToAction("Details", "Index", new { id = id });
-    // }
     [HttpGet("/customers/deleteall")]
     public ActionResult DeleteAll()
     {

@@ -61,7 +61,7 @@ namespace Bookstore.Controllers
       public ActionResult UpdateBook(int id)
       {
         Book selectedBook = Book.Find(id);
-        return View("UpdateBook", selectedBook);
+        return View("BookUpdate", selectedBook);
         // return RedirectToAction("Index")
       }
       [HttpPost("/books/{id}/update")]

@@ -54,8 +54,13 @@ namespace Bookstore.Controllers
       [HttpPost("/search")]
       public ActionResult Search()
       {
-        List<Book> searchBook = Book.SearchBooks(Request.Form["searchdate"]);
-        return RedirectToAction("Index");
+      List<Book> searchBook = Book.SearchBooks(Request.Form["searchdate"]);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      List<Customer> newCustomer = Customer.GetAll();
+      model.Add("Customers", newCustomer);
+      model.Add("Books", searchBook);
+
+      return View("Index",model);
       }
       [HttpGet("/books/{id}/update")]
       public ActionResult UpdateForm(int id)

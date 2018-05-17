@@ -21,49 +21,53 @@ Layout = "_Layout";
           @foreach(var book in Model["Books"])
           {
             <li class="list-group-item">
-              <table class="table">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Book ID</th>
-                    <th scope="col"><strong>Thumbnail</strong></th>
-                    <th scope="col"><strong>Author</strong></th>
-                    <th scope="col"><strong>Title</strong></th>
-                    <th scope="col"><strong>ISBN</strong></th>
-                    <th scope="col"><strong>Publisher</strong></th>
-                    <th scope="col"><strong>Price</strong></th>
-                    <th scope="col"><strong>Quantity</strong></th>
-                    <th scope="col"><strong>Action</strong></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row"><a class="btn btn-secondary" href="/books/@book.GetId()">@book.GetId()</a></th>
-                    <td><img class="img img-fluid float-left" src="@book.GetImage()" alt="thumb"></td>
-                    <td>@book.GetAuthor()</td>
-                    <td>@book.GetName()</td>
-                    <td>@book.GetIsbn()</td>
-                    <td>@book.GetPublisher()</td>
-                    <td>@book.GetPrice()</td>
-                    <td>@book.GetQuantity()</td>
-                    <td>
-                      <form class="form" action="~/customers/checkout" method="post">
-                        <div class="form-group">
-                          <input name= "bookid" value="@book.GetId()"></input>
-                          <label for="appendName">Select your name:</label>
-                          <br>
-                          <select class="form-control" name="appendName">
-                            @foreach(var customer in Model["Customers"])
-                            {
-                              <option value="@customer.GetId()">@customer.GetName()</option>
-                            }
-                          </select>
-                          <button class="btn btn-secondary" type="submit" name="button">Submit</button>
-                        </div>
-                      </form>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="overflow-x:auto;">
+                <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Book ID</th>
+                      <th scope="col"><strong>Thumbnail</strong></th>
+                      <th scope="col"><strong>Author</strong></th>
+                      <th scope="col"><strong>Title</strong></th>
+                      <th scope="col"><strong>ISBN</strong></th>
+                      <th scope="col"><strong>Publisher</strong></th>
+                      <th scope="col"><strong>Price</strong></th>
+                      <th scope="col"><strong>Quantity</strong></th>
+                      <th scope="col"><strong>Action</strong></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"><a class="btn btn-secondary" href="/books/@book.GetId()">@book.GetId()</a></th>
+                      <td><img class="img img-fluid float-left" src="@book.GetImage()" alt="thumb"></td>
+                      <td>@book.GetAuthor()</td>
+                      <td>@book.GetName()</td>
+                      <td>@book.GetIsbn()</td>
+                      <td>@book.GetPublisher()</td>
+                      <td>@book.GetPrice()</td>
+                      <td>@book.GetQuantity()</td>
+                      <td>
+                        <form class="form" action="~/customers/checkout" method="post">
+                          <div class="form-group">
+                            <input type="hidden" class="form-control"name= "bookid" value="@book.GetId()"  readonly></input>
+                            <hr>
+                            <label for="appendName">Select your name:</label>
+                            <select class="form-control" name="appendName">
+                              @foreach(var customer in Model["Customers"])
+                              {
+                                <option value="@customer.GetId()">@customer.GetName()</option>
+                              }
+                            </select>
+                            <hr>
+                            <button class="btn btn-secondary" type="submit" name="button">Submit</button>
+                          </div>
+                        </form>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
             </li>
           }
         </ul>
